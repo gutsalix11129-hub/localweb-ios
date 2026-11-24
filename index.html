@@ -4,53 +4,63 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050508">
-<meta name="description" content="LocalWeb.ios — Yerel işletmeler için premium web tasarımı. Hızlı, mobil uyumlu ve SEO dostu web siteleri.">
-<title>LocalWeb.ios | Geleceğin Web Tasarımı</title>
+<meta name="description" content="LocalWeb.ios — Yerel işletmeler için premium web tasarımı. Hızlı, mobil uyumlu, SEO dostu web siteleri ve dijital çözümler.">
+<meta name="keywords" content="web tasarım, yerel işletme, kafe web sitesi, klinik web sitesi, butik web tasarım, localweb">
+<meta property="og:title" content="LocalWeb.ios | Premium Web Tasarım Ajansı">
+<meta property="og:description" content="İşletmenizi dijitale taşıyın. Hızlı, estetik ve SEO uyumlu web siteleri.">
+<meta property="og:type" content="website">
+<title>LocalWeb.ios | Premium Web Tasarım Ajansı</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%23ff4b8b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='sans-serif' font-size='34' font-weight='800' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+
 <style>
 /* ============================================================
-   PREMIUM TEMA DEĞİŞKENLERİ
+   1. PREMIUM DEĞİŞKENLER & RESET
    ============================================================ */
 :root {
   --bg: #050508;
+  --bg-alt: #0a0a10;
   --surface: rgba(255, 255, 255, 0.03);
   --surface-hover: rgba(255, 255, 255, 0.06);
   --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-hover: rgba(255, 255, 255, 0.15);
   --text: #ffffff;
-  --text-muted: #a1a1aa;
+  --text-muted: #94a3b8;
   --primary: #7c5cff;
   --secondary: #ff4b8b;
   --accent: #00e5ff;
   --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
   --font-body: 'Inter', sans-serif;
-  --font-display: 'Syne', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
   --nav-h: 80px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow-glow: 0 0 40px -10px rgba(124, 92, 255, 0.5);
+  --shadow-card: 0 20px 40px -10px rgba(0,0,0,0.5);
 }
 
 [data-theme="light"] {
-  --bg: #f8f8fc;
+  --bg: #fafafa;
+  --bg-alt: #f0f0f5;
   --surface: rgba(0, 0, 0, 0.02);
   --surface-hover: rgba(0, 0, 0, 0.04);
   --border: rgba(0, 0, 0, 0.08);
-  --border-strong: rgba(0, 0, 0, 0.15);
+  --border-hover: rgba(0, 0, 0, 0.15);
   --text: #09090b;
-  --text-muted: #52525b;
+  --text-muted: #64748b;
+  --shadow-card: 0 20px 40px -10px rgba(0,0,0,0.1);
 }
 
-/* ============================================================
-   TEMEL AYARLAR
-   ============================================================ */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 40px); }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 20px); }
 body {
   font-family: var(--font-body);
   background-color: var(--bg);
   color: var(--text);
-  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -60,85 +70,66 @@ body {
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 img, svg { display: block; max-width: 100%; }
-
-/* Arka Plan Animasyonlu Işıklar */
-.bg-glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: -1;
-  opacity: 0.5;
-  animation: float 20s infinite alternate;
-}
-.glow-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--primary); }
-.glow-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: var(--secondary); animation-delay: -10s; }
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(10%, 10%) scale(1.1); }
-}
-
-.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 @media (max-width: 640px) { .wrap { padding: 0 20px; } }
 
-h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
+p { color: var(--text-muted); }
 
 /* ============================================================
-   NAVBAR
+   2. ARKA PLAN EFEKTLERİ & CURSOR
+   ============================================================ */
+.bg-glow {
+  position: fixed; border-radius: 50%; filter: blur(120px); z-index: -1; opacity: 0.35; pointer-events: none;
+}
+.glow-1 { top: -15%; left: -10%; width: 60vw; height: 60vw; background: var(--primary); animation: float 20s infinite alternate; }
+.glow-2 { bottom: -15%; right: -10%; width: 50vw; height: 50vw; background: var(--secondary); animation: float 25s infinite alternate-reverse; }
+.glow-3 { top: 40%; left: 30%; width: 30vw; height: 30vw; background: var(--accent); opacity: 0.15; animation: float 15s infinite alternate; }
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 15%) scale(1.1); }
+}
+
+#cursor-glow {
+  position: fixed; top: 0; left: 0; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(124,92,255,0.12) 0%, transparent 60%);
+  border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;
+  transition: opacity 0.3s ease; opacity: 0;
+}
+
+/* ============================================================
+   3. NAVİGASYON
    ============================================================ */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: var(--nav-h);
-  display: flex; align-items: center;
-  background: rgba(var(--bg), 0.7);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h);
+  display: flex; align-items: center; background: rgba(5, 5, 8, 0.7);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border); transition: all 0.3s;
 }
+[data-theme="light"] .nav { background: rgba(250, 250, 250, 0.7); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; }
-.brand {
-  display: flex; align-items: center; gap: 12px;
-  font-family: var(--font-display); font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
-  z-index: 102;
-}
+.brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 22px; font-weight: 800; z-index: 102; }
 .brand-icon {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--gradient);
-  display: grid; place-items: center; color: #fff; font-size: 18px;
-  box-shadow: 0 0 20px rgba(124, 92, 255, 0.4);
+  width: 38px; height: 38px; border-radius: 10px; background: var(--gradient);
+  display: grid; place-items: center; color: #fff; font-size: 18px; box-shadow: var(--shadow-glow);
 }
 .nav-links { display: flex; gap: 32px; align-items: center; font-weight: 500; font-size: 14px; }
 .nav-links a { color: var(--text-muted); transition: color 0.2s; position: relative; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-  background: var(--gradient); transition: width 0.3s;
+  background: var(--gradient); transition: width 0.3s; border-radius: 2px;
 }
 .nav-links a:hover::after { width: 100%; }
 .nav-actions { display: flex; gap: 16px; align-items: center; }
-
-/* Butonlar */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 12px 24px; border-radius: 100px; font-weight: 600; font-size: 14px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent;
-}
-.btn-primary { background: var(--text); color: var(--bg); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
-.btn-outline { border-color: var(--border-strong); color: var(--text); background: var(--surface); }
-.btn-outline:hover { background: var(--surface-hover); border-color: var(--text-muted); }
-.btn-gradient { background: var(--gradient); color: #fff; box-shadow: 0 4px 15px rgba(124, 92, 255, 0.3); }
-.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(124, 92, 255, 0.5); }
-
 .icon-btn {
-  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
-  border: 1px solid var(--border); color: var(--text); transition: all 0.2s;
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid var(--border); color: var(--text); transition: all 0.2s; background: var(--surface);
 }
-.icon-btn:hover { background: var(--surface); border-color: var(--text-muted); }
-
+.icon-btn:hover { background: var(--surface-hover); border-color: var(--border-hover); transform: scale(1.05); }
 .hamburger { display: none; z-index: 102; }
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-actions .btn { display: none; }
+@media (max-width: 960px) {
+  .nav-links, .nav-actions .btn-primary { display: none; }
   .hamburger { display: grid; }
 }
 
@@ -146,8 +137,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .mobile-menu {
   position: fixed; inset: 0; z-index: 101; background: var(--bg);
   display: flex; flex-direction: column; padding: calc(var(--nav-h) + 20px) 24px 40px;
-  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow-y: auto;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto;
 }
 .mobile-menu.on { transform: translateX(0); }
 .mobile-menu a {
@@ -157,256 +147,307 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .mobile-menu .btn { margin-top: 32px; font-size: 16px; padding: 16px; }
 
 /* ============================================================
-   HERO SECTION
+   4. BUTONLAR
    ============================================================ */
-.hero { padding: calc(var(--nav-h) + 80px) 0 60px; text-align: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; white-space: nowrap;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-primary { background: var(--text); color: var(--bg); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,255,255,0.15); }
+.btn-outline { border-color: var(--border); background: var(--surface); color: var(--text); backdrop-filter: blur(10px); }
+.btn-outline:hover { border-color: var(--border-hover); background: var(--surface-hover); transform: translateY(-2px); }
+.btn-gradient { background: var(--gradient); color: #fff; box-shadow: var(--shadow-glow); }
+.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 15px 35px -5px rgba(124, 92, 255, 0.6); }
+
+/* ============================================================
+   5. HERO & CANLI ÖNİZLEME
+   ============================================================ */
+.hero { padding: calc(var(--nav-h) + 80px) 0 80px; text-align: center; position: relative; }
 .badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 16px; border-radius: 100px; background: var(--surface);
-  border: 1px solid var(--border); font-size: 13px; font-weight: 500; margin-bottom: 32px;
-  backdrop-filter: blur(10px);
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
+  border-radius: 100px; background: var(--surface); border: 1px solid var(--border);
+  font-size: 13px; font-weight: 500; margin-bottom: 32px; backdrop-filter: blur(10px);
 }
 .badge span.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
 .hero h1 { font-size: clamp(40px, 7vw, 80px); margin-bottom: 24px; }
 .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero p { color: var(--text-muted); font-size: clamp(16px, 2vw, 20px); max-width: 600px; margin: 0 auto 40px; }
+.hero p.lead { font-size: clamp(16px, 2vw, 20px); max-width: 640px; margin: 0 auto 40px; }
 .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
 
-/* Canlı Önizleme (Tarayıcı) */
 .preview-container { max-width: 1000px; margin: 0 auto; position: relative; }
-.preview-tabs {
-  display: flex; justify-content: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
-  position: relative; z-index: 2;
-}
+.preview-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; position: relative; z-index: 2; }
 .tab-btn {
   padding: 10px 20px; border-radius: 100px; font-size: 14px; font-weight: 600;
   background: var(--surface); border: 1px solid var(--border); color: var(--text-muted);
-  transition: all 0.3s; backdrop-filter: blur(10px);
+  transition: all 0.3s; backdrop-filter: blur(10px); cursor: pointer;
 }
 .tab-btn:hover { border-color: var(--text-muted); color: var(--text); }
 .tab-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
 .browser-mockup {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-  position: relative; z-index: 1;
-  backdrop-filter: blur(20px);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.7); position: relative; z-index: 1; backdrop-filter: blur(20px);
 }
-.browser-header {
-  padding: 12px 20px; display: flex; align-items: center; gap: 16px;
-  border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2);
-}
+.browser-header { padding: 14px 20px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); }
 .browser-dots { display: flex; gap: 8px; }
 .browser-dots i { width: 10px; height: 10px; border-radius: 50%; background: #333; }
 .browser-dots i:nth-child(1) { background: #ff5f56; }
 .browser-dots i:nth-child(2) { background: #ffbd2e; }
 .browser-dots i:nth-child(3) { background: #27c93f; }
 .browser-url {
-  flex: 1; background: var(--surface); border: 1px solid var(--border);
-  padding: 6px 16px; border-radius: 8px; font-size: 12px; color: var(--text-muted);
-  display: flex; align-items: center; gap: 8px;
+  flex: 1; background: var(--surface); border: 1px solid var(--border); padding: 8px 16px;
+  border-radius: 8px; font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
 }
 .browser-body { height: 500px; background: #fff; position: relative; }
 @media (max-width: 768px) { .browser-body { height: 350px; } }
 .browser-body iframe { width: 100%; height: 100%; border: none; display: block; }
 
 /* ============================================================
-   ÖZELLİKLER (BENTO GRID)
+   6. ÖZELLİKLER (BENTO GRID)
    ============================================================ */
-.features { padding: 80px 0; }
+.features { padding: 100px 0; }
 .section-head { text-align: center; margin-bottom: 60px; }
 .section-head h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
-.section-head p { color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto; }
+.section-head p { font-size: 18px; max-width: 600px; margin: 0 auto; }
 
-.bento-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
+.bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 @media (max-width: 900px) { .bento-grid { grid-template-columns: 1fr; } }
 .bento-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
-  padding: 32px; transition: all 0.3s; display: flex; flex-direction: column;
-  position: relative; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 36px; transition: all 0.4s; display: flex; flex-direction: column; position: relative; overflow: hidden;
 }
-.bento-card:hover { background: var(--surface-hover); border-color: var(--border-strong); transform: translateY(-5px); }
-.bento-card .icon-wrap {
-  width: 48px; height: 48px; border-radius: 12px; background: rgba(124, 92, 255, 0.1);
-  display: grid; place-items: center; color: var(--primary); margin-bottom: 24px;
-}
-.bento-card h3 { font-size: 22px; margin-bottom: 12px; }
-.bento-card p { color: var(--text-muted); font-size: 15px; }
+.bento-card:hover { background: var(--surface-hover); border-color: var(--border-hover); transform: translateY(-5px); }
 .bento-card.wide { grid-column: span 2; }
 @media (max-width: 900px) { .bento-card.wide { grid-column: span 1; } }
-
-/* ==========================================
-   AKILLI TEKLİF HESAPLAYICI
-   ========================================== */
-.calculator { padding: 80px 0; }
-.calc-wrapper {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 32px;
-  padding: 40px; position: relative; overflow: hidden;
+.icon-wrap {
+  width: 52px; height: 52px; border-radius: 14px; background: rgba(124, 92, 255, 0.1);
+  display: grid; place-items: center; color: var(--primary); margin-bottom: 24px; border: 1px solid rgba(124,92,255,0.2);
 }
-@media (max-width: 900px) { .calc-wrapper { grid-template-columns: 1fr; padding: 24px; } }
+.bento-card h3 { font-size: 22px; margin-bottom: 12px; }
+.bento-card p { font-size: 15px; }
 
+/* ============================================================
+   7. TEKLİF HESAPLAYICI
+   ============================================================ */
+.calculator { padding: 100px 0; }
+.calc-wrapper {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--surface); 
+  border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 48px; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+@media (max-width: 900px) { .calc-wrapper { grid-template-columns: 1fr; padding: 32px 24px; } }
 .calc-section { margin-bottom: 32px; }
 .calc-section h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; }
 .calc-options { display: flex; flex-wrap: wrap; gap: 12px; }
 .calc-opt {
   padding: 12px 20px; border-radius: 12px; border: 1px solid var(--border);
-  background: var(--bg); font-size: 14px; font-weight: 500; cursor: pointer;
-  transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+  background: var(--bg); font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s;
 }
 .calc-opt:hover { border-color: var(--text-muted); }
 .calc-opt input { display: none; }
 .calc-opt.selected { background: rgba(124, 92, 255, 0.15); border-color: var(--primary); color: var(--primary); }
 
 .calc-summary {
-  background: var(--bg); border: 1px solid var(--border); border-radius: 24px;
-  padding: 32px; display: flex; flex-direction: column; justify-content: center;
-  position: relative;
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 40px; display: flex; flex-direction: column; justify-content: center; position: relative;
 }
 .calc-summary::before {
-  content: ''; position: absolute; inset: 0; border-radius: 24px; padding: 2px;
+  content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
   background: var(--gradient); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.3; pointer-events: none;
+  -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.4; pointer-events: none;
 }
-.calc-time { font-family: var(--font-display); font-size: 48px; font-weight: 800; margin-bottom: 8px; line-height: 1; }
-.calc-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 32px; }
+.calc-time { font-family: var(--font-display); font-size: 52px; font-weight: 800; margin-bottom: 8px; line-height: 1; transition: opacity 0.2s; }
+.calc-desc { font-size: 15px; margin-bottom: 32px; }
 
 /* ============================================================
-   PORTFOLYO & MODAL
+   8. PORTFOLYO (3D TILT)
    ============================================================ */
-.portfolio { padding: 80px 0; }
-.port-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.portfolio { padding: 100px 0; background: var(--bg-alt); }
+.port-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
 .port-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
-  overflow: hidden; cursor: pointer; transition: all 0.3s; group;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  overflow: hidden; cursor: pointer; transition: transform 0.1s ease, border-color 0.3s; transform-style: preserve-3d;
 }
-.port-card:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+.port-card:hover { border-color: var(--border-hover); }
 .port-img {
-  height: 220px; position: relative; overflow: hidden;
-  display: grid; place-items: center;
+  height: 240px; position: relative; overflow: hidden; display: grid; place-items: center; transform: translateZ(20px);
 }
 .port-img .mockup-shape {
   width: 80%; height: 70%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.1); display: flex; flex-direction: column; overflow: hidden;
-  transition: transform 0.4s;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3); transition: transform 0.4s;
 }
 .port-card:hover .mockup-shape { transform: scale(1.05); }
 .port-overlay {
   position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-  display: grid; place-items: center; opacity: 0; transition: opacity 0.3s;
+  display: grid; place-items: center; opacity: 0; transition: opacity 0.3s; transform: translateZ(30px);
 }
 .port-card:hover .port-overlay { opacity: 1; }
 .port-overlay span { color: #fff; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-.port-info { padding: 24px; }
+.port-info { padding: 24px; transform: translateZ(10px); }
 .port-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.port-info h3 { font-size: 20px; margin-bottom: 8px; }
-.port-info p { color: var(--text-muted); font-size: 14px; }
+.port-info h3 { font-size: 22px; margin-bottom: 8px; }
+.port-info p { font-size: 14px; }
 
-/* Modal */
-.modal {
-  position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.9);
-  backdrop-filter: blur(10px); display: none; place-items: center; padding: 20px;
+/* ============================================================
+   9. FİYATLANDIRMA
+   ============================================================ */
+.pricing { padding: 100px 0; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+.price-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 40px; display: flex; flex-direction: column; transition: all 0.3s; position: relative;
 }
-.modal.on { display: grid; }
+.price-card:hover { border-color: var(--border-hover); transform: translateY(-5px); }
+.price-card.hot { border: 2px solid transparent; background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--gradient) border-box; box-shadow: var(--shadow-glow); }
+.price-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 100px; letter-spacing: 0.5px; }
+.price-name { font-size: 16px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+.price-amount { font-family: var(--font-display); font-size: 48px; font-weight: 800; margin-bottom: 8px; }
+.price-amount small { font-size: 16px; font-weight: 500; color: var(--text-muted); }
+.price-features { list-style: none; margin: 32px 0; flex: 1; display: flex; flex-direction: column; gap: 16px; }
+.price-features li { font-size: 15px; display: flex; align-items: center; gap: 12px; }
+.price-features li svg { color: var(--accent); flex: none; }
+
+/* ============================================================
+   10. SÜREÇ (TIMELINE)
+   ============================================================ */
+.process { padding: 100px 0; background: var(--bg-alt); }
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+@media (max-width: 900px) { .timeline { grid-template-columns: 1fr; gap: 40px; } }
+.step { text-align: center; position: relative; }
+.step-num {
+  width: 60px; height: 60px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
+  display: grid; place-items: center; font-family: var(--font-display); font-size: 24px; font-weight: 800;
+  margin: 0 auto 24px; color: var(--primary); position: relative; z-index: 1;
+}
+.step h4 { font-size: 20px; margin-bottom: 12px; }
+.step p { font-size: 14px; }
+@media (min-width: 901px) {
+  .step:not(:last-child)::after {
+    content: ''; position: absolute; top: 30px; left: 60%; width: 80%; height: 2px;
+    background: linear-gradient(90deg, var(--border), transparent); z-index: 0;
+  }
+}
+
+/* ============================================================
+   11. YORUMLAR
+   ============================================================ */
+.testimonials { padding: 100px 0; }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; }
+.testi-stars { display: flex; gap: 4px; color: #fbbf24; margin-bottom: 20px; }
+.testi-stars svg { width: 18px; height: 18px; }
+.testi-text { font-size: 16px; line-height: 1.7; margin-bottom: 24px; font-style: italic; color: var(--text); }
+.testi-user { display: flex; align-items: center; gap: 16px; }
+.testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--gradient); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 18px; }
+.testi-info h4 { font-size: 16px; }
+.testi-info p { font-size: 13px; }
+
+/* ============================================================
+   12. SSS
+   ============================================================ */
+.faq-section { padding: 100px 0; }
+.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
+details[open] { border-color: var(--primary); background: var(--bg-alt); }
+summary { padding: 24px; font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+.faq-icon { transition: transform 0.3s; }
+details[open] .faq-icon { transform: rotate(45deg); color: var(--primary); }
+.faq-content { padding: 0 24px 24px; font-size: 15px; line-height: 1.7; }
+
+/* ============================================================
+   13. FOOTER & MOBİL SABİT BUTON & TOAST
+   ============================================================ */
+footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-alt); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand p { margin-top: 16px; max-width: 300px; font-size: 14px; }
+.footer-links h4 { font-size: 16px; margin-bottom: 20px; }
+.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { color: var(--text-muted); font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 16px; }
+
+.mobile-sticky { position: fixed; bottom: 24px; left: 24px; right: 24px; z-index: 90; display: none; }
+@media (max-width: 768px) { .mobile-sticky { display: block; } }
+.mobile-sticky .btn { width: 100%; padding: 18px; font-size: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+#toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translate(-50%, 20px);
+  background: var(--text); color: var(--bg); padding: 14px 28px; border-radius: 100px;
+  font-weight: 600; font-size: 14px; opacity: 0; pointer-events: none;
+  transition: all 0.3s; z-index: 300; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+#toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+/* ============================================================
+   14. MODAL
+   ============================================================ */
+.modal {
+  position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+  display: none; place-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s;
+}
+.modal.on { display: grid; opacity: 1; }
 .modal-content {
   width: 100%; max-width: 1100px; background: var(--bg); border: 1px solid var(--border);
-  border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; height: 90vh;
-  animation: modalScale 0.3s ease;
+  border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; height: 90vh;
+  animation: modalScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-@keyframes modalScale { from { opacity: 0; transform: scale(0.95); } }
+@keyframes modalScale { from { transform: scale(0.95) translateY(20px); opacity: 0; } }
 .modal-header {
   padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid var(--border); background: var(--surface);
 }
 .modal-controls { display: flex; gap: 8px; }
-.dev-btn { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-muted); border: 1px solid var(--border); }
+.dev-btn { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-muted); border: 1px solid var(--border); cursor: pointer; background: none; }
 .dev-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-.modal-close { width: 32px; height: 32px; border-radius: 8px; background: var(--surface); display: grid; place-items: center; }
+.modal-close { width: 32px; height: 32px; border-radius: 8px; background: var(--surface); display: grid; place-items: center; cursor: pointer; border: 1px solid var(--border); color: var(--text); }
 .modal-body { flex: 1; background: #111; padding: 24px; display: flex; justify-content: center; overflow-y: auto; }
 .iframe-wrapper { width: 100%; height: 100%; background: #fff; border-radius: 12px; overflow: hidden; transition: all 0.3s; }
 .iframe-wrapper.mobile { width: 375px; height: 700px; border-radius: 24px; border: 8px solid #222; }
 .iframe-wrapper iframe { width: 100%; height: 100%; border: none; }
 
 /* ============================================================
-   SSS & FOOTER
+   15. SCROLL REVEAL
    ============================================================ */
-.faq-section { padding: 80px 0; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-details {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  overflow: hidden; transition: all 0.3s;
-}
-details[open] { border-color: var(--primary); }
-summary {
-  padding: 24px; font-size: 18px; font-weight: 600; cursor: pointer;
-  display: flex; justify-content: space-between; align-items: center; list-style: none;
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { transition: transform 0.3s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-content { padding: 0 24px 24px; color: var(--text-muted); font-size: 15px; line-height: 1.7; }
-
-footer {
-  border-top: 1px solid var(--border); padding: 60px 0 30px; background: rgba(0,0,0,0.3);
-}
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
-.footer-brand p { color: var(--text-muted); margin-top: 16px; max-width: 300px; font-size: 14px; }
-.footer-links h4 { font-size: 16px; margin-bottom: 20px; }
-.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.footer-links a { color: var(--text-muted); font-size: 14px; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
-.footer-bottom {
-  border-top: 1px solid var(--border); padding-top: 24px;
-  display: flex; justify-content: space-between; align-items: center;
-  color: var(--text-muted); font-size: 13px; flex-wrap: wrap; gap: 16px;
-}
-
-/* Mobil Sabit Buton */
-.mobile-sticky {
-  position: fixed; bottom: 20px; left: 20px; right: 20px; z-index: 90;
-  display: none;
-}
-@media (max-width: 768px) { .mobile-sticky { display: block; } }
-.mobile-sticky .btn { width: 100%; padding: 16px; font-size: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-
-/* Toast */
-#toast {
-  position: fixed; bottom: 80px; left: 50%; transform: translate(-50%, 20px);
-  background: var(--text); color: var(--bg); padding: 14px 28px; border-radius: 100px;
-  font-weight: 600; font-size: 14px; opacity: 0; pointer-events: none;
-  transition: all 0.3s; z-index: 300; display: flex; align-items: center; gap: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-#toast.on { opacity: 1; transform: translate(-50%, 0); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.on { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
+<!-- İmleç Işığı -->
+<div id="cursor-glow"></div>
+
 <!-- Arka Plan Işıkları -->
 <div class="bg-glow glow-1"></div>
 <div class="bg-glow glow-2"></div>
+<div class="bg-glow glow-3"></div>
 
 <!-- Navbar -->
 <header class="nav" id="navbar">
   <div class="wrap">
-    <a href="#" class="brand">
-      <div class="brand-icon">L</div> LocalWeb.ios
-    </a>
+    <a href="#" class="brand"><div class="brand-icon">L</div> LocalWeb.ios</a>
     <nav class="nav-links">
       <a href="#features">Neden Biz?</a>
       <a href="#calculator">Teklif Al</a>
       <a href="#portfolio">Portfolyo</a>
+      <a href="#pricing">Paketler</a>
       <a href="#faq">SSS</a>
     </nav>
     <div class="nav-actions">
       <button class="icon-btn" id="themeToggle" aria-label="Tema">
-        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
-      <a href="https://www.instagram.com/localweb.io?jplx=M29oZ2hxYzJubjVv" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Instagram'dan Yaz
+      <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        Hemen Başla
       </a>
       <button class="icon-btn hamburger" id="hamburger">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -420,9 +461,10 @@ footer {
   <a href="#features" onclick="closeMenu()">Neden Biz?</a>
   <a href="#calculator" onclick="closeMenu()">Teklif Al</a>
   <a href="#portfolio" onclick="closeMenu()">Portfolyo</a>
+  <a href="#pricing" onclick="closeMenu()">Paketler</a>
   <a href="#faq" onclick="closeMenu()">SSS</a>
-  <a href="https://www.instagram.com/localweb.io?jplx=M29oZ2hxYzJubjVv" target="_blank" rel="noopener noreferrer" class="btn btn-gradient">
-    @localweb.io ile İletişime Geç
+  <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient">
+    @localweb.ios ile İletişime Geç
   </a>
 </div>
 
@@ -430,28 +472,27 @@ footer {
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="badge">
-        <span class="dot"></span> Yeni Nesil Web Tasarım Ajansı
-      </div>
-      <h1>Dijital Dünyada<br><span>Fark Yaratan</span> Tasarımlar</h1>
-      <p>İşletmenizi sıradanlıktan kurtarın. Hızlı, mobil uyumlu ve Google dostu web siteleri ile rakiplerinizin bir adım önüne geçin.</p>
-      <div class="hero-cta">
-        <a href="https://www.instagram.com/localweb.io?jplx=M29oZ2hxYzJubjVv" target="_blank" rel="noopener noreferrer" class="btn btn-gradient" style="padding: 16px 32px; font-size: 16px;">
+      <div class="badge reveal"><span class="dot"></span> Yeni Nesil Dijital Ajans</div>
+      <h1 class="reveal">Dijital Dünyada<br><span>Fark Yaratan</span> Tasarımlar</h1>
+      <p class="lead reveal">İşletmenizi sıradanlıktan kurtarın. Hızlı, mobil uyumlu ve Google dostu web siteleri ile rakiplerinizin bir adım önüne geçin.</p>
+      <div class="hero-cta reveal">
+        <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient" style="padding: 18px 36px; font-size: 16px;">
           Hemen Teklif Alın
         </a>
-        <button onclick="copyToClipboard('Merhaba LocalWeb.ios, işletmem için web sitesi yaptırmak istiyorum.', 'DM Mesajı Kopyalandı!')" class="btn btn-outline" style="padding: 16px 32px; font-size: 16px;">
+        <button onclick="copyToClipboard('Merhaba LocalWeb.ios, işletmem için web sitesi yaptırmak istiyorum.', 'DM Mesajı Kopyalandı!')" class="btn btn-outline" style="padding: 18px 36px; font-size: 16px;">
           DM Mesajını Kopyala
         </button>
       </div>
 
       <!-- İnteraktif Tarayıcı -->
-      <div class="preview-container">
+      <div class="preview-container reveal">
         <div class="preview-tabs">
           <button class="tab-btn active" onclick="switchTab('kafe', this)">☕ Kafe</button>
           <button class="tab-btn" onclick="switchTab('klinik', this)">🩺 Klinik</button>
           <button class="tab-btn" onclick="switchTab('guzellik', this)">💇‍♀️ Güzellik</button>
           <button class="tab-btn" onclick="switchTab('hukuk', this)">⚖️ Avukatlık</button>
           <button class="tab-btn" onclick="switchTab('butik', this)">🛍️ Butik</button>
+          <button class="tab-btn" onclick="switchTab('emlak', this)">🏠 Emlak</button>
         </div>
         <div class="browser-mockup">
           <div class="browser-header">
@@ -472,38 +513,35 @@ footer {
   <!-- BENTO ÖZELLİKLER -->
   <section id="features" class="features">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2>Neden LocalWeb.ios?</h2>
         <p>Sadece web sitesi yapmıyoruz; işletmenizin dijital vitrinini sanata dönüştürüyoruz.</p>
       </div>
       <div class="bento-grid">
-        <div class="bento-card wide">
-          <div class="icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          </div>
+        <div class="bento-card wide reveal">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
           <h3>Mükemmel Mobil Deneyim</h3>
           <p>Müşterilerinizin %80'i sizi telefonundan bulacak. Web siteniz her ekranda (telefon, tablet, bilgisayar) kusursuz görünmek üzere tasarlanır.</p>
         </div>
-        <div class="bento-card">
-          <div class="icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
+        <div class="bento-card reveal">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <h3>Işık Hızında</h3>
           <p>Google'ın sevdiği hız. 1 saniyeden kısa yüklenme süresi ile ziyaretçilerinizi bekletmeyin.</p>
         </div>
-        <div class="bento-card">
-          <div class="icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
+        <div class="bento-card reveal">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>SEO Altyapısı</h3>
           <p>Arama motorlarında üst sıralarda çıkmak için gereken tüm teknik altyapı ve optimizasyon hazır.</p>
         </div>
-        <div class="bento-card wide">
-          <div class="icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
+        <div class="bento-card wide reveal">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <h3>7/24 Kesintisiz Destek</h3>
           <p>Site yayına girdikten sonra yalnız değilsiniz. Herhangi bir sorunda, güncellemede veya yeni bir fikirde tek bir Instagram DM'i ile yanınızdayız.</p>
+        </div>
+        <div class="bento-card reveal">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>Çoklu Dil Desteği</h3>
+          <p>İşletmenizi globalleştirin. İhtiyacınıza göre İngilizce veya diğer dillerde site yapısı.</p>
         </div>
       </div>
     </div>
@@ -512,12 +550,12 @@ footer {
   <!-- TEKLİF SİHİRBAZI -->
   <section id="calculator" class="calculator">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2>Projenizi Tasarlayın</h2>
         <p>İhtiyaçlarınızı seçin, tahmini süreyi anında görün ve size özel teklif mesajını kopyalayın.</p>
       </div>
       
-      <div class="calc-wrapper">
+      <div class="calc-wrapper reveal">
         <div class="calc-form">
           <div class="calc-section">
             <h4>1. İşletme Türü</h4>
@@ -555,7 +593,7 @@ footer {
           <div class="calc-time" id="calcTime">5 İş Günü</div>
           <div class="calc-desc" id="calcDesc">Seçmiş olduğunuz standart özelliklerle projeniz yaklaşık 1 hafta içinde tamamlanacaktır.</div>
           
-          <button class="btn btn-gradient" onclick="sendQuote()" style="width: 100%; padding: 16px; font-size: 16px;">
+          <button class="btn btn-gradient" onclick="sendQuote()" style="width: 100%; padding: 18px; font-size: 16px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
             Bu Seçimlerle Teklif Al
           </button>
@@ -565,14 +603,156 @@ footer {
   </section>
 
   <!-- PORTFOLYO -->
-  <section id="portfolio" class="portfolio" style="background: rgba(0,0,0,0.2);">
+  <section id="portfolio" class="portfolio">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2>Sektörüne İlham Veren Tasarımlar</h2>
         <p>Kendi işletmen için nasıl bir site istediğini keşfet. Tıkla, canlı önizlemeyi incele.</p>
       </div>
-      <div class="port-grid" id="portGrid">
-        <!-- JS ile doldurulacak -->
+      <div class="port-grid" id="portGrid"></div>
+    </div>
+  </section>
+
+  <!-- FİYATLANDIRMA -->
+  <section id="pricing" class="pricing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>İşletmenize Uygun Paket Seçin</h2>
+        <p>Gizli ücret yok. Her bütçeye uygun, şeffaf fiyatlandırma.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-name">Başlangıç</div>
+          <div class="price-amount">₺2.499<small>'dan</small></div>
+          <p>Yeni başlayan işletmeler için ideal başlangıç paketi.</p>
+          <ul class="price-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Tek Sayfa Tasarım</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobil Uyumlu</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Ücretsiz Domain & Hosting</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1 Tur Revizyon</li>
+          </ul>
+          <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">Hemen Başla</a>
+        </div>
+        <div class="price-card hot reveal">
+          <div class="price-tag">EN POPÜLER</div>
+          <div class="price-name">Profesyonel</div>
+          <div class="price-amount">₺4.999<small>'dan</small></div>
+          <p>Ciddi müşteri çekmek isteyen işletmeler için.</p>
+          <ul class="price-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3-5 Sayfa Tasarım</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Gelişmiş SEO Ayarları</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Blog / Galeri Bölümü</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3 Tur Revizyon</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3 Ay Destek</li>
+          </ul>
+          <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient" style="width: 100%;">Hemen Başla</a>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-name">Kurumsal</div>
+          <div class="price-amount">Teklif<small> Alın</small></div>
+          <p>Sınırsız ihtiyaçları olan büyük ölçekli işletmeler için.</p>
+          <ul class="price-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Sınırsız Sayfa</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> E-Ticaret / Özel Yazılım</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Özel Animasyonlar</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Sınırsız Revizyon</li>
+          </ul>
+          <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">Teklif Al</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÜREÇ -->
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Nasıl Çalışıyoruz?</h2>
+        <p>Karmaşık süreçler yok. Instagram'dan mesaj at, gerisini bize bırak.</p>
+      </div>
+      <div class="timeline">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h4>DM At & Tanışalım</h4>
+          <p>Instagram üzerinden işletmeni anlat. Sektörüne ve bütçene en uygun çözümü belirleyelim.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h4>Tasarım & Onay</h4>
+          <p>Sana özel hazırladığımız tasarımı sunalım. İstediğin gibi olana kadar revize edelim.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h4>Test & Yayın</h4>
+          <p>Sitenin hızını, mobil uyumunu ve SEO ayarlarını test edelim. Her şey kusursuzsa yayına alalım.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <h4>Canlıya Alalım</h4>
+          <p>Onayının ardından siteni yayına alalım. Müşterilerin seni bulmaya başlasın!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YORUMLAR -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Müşterilerimiz Ne Diyor?</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testi-text">"Kafemizin web sitesi için çok profesyonel bir iş çıkardılar. Müşterilerimizden çok güzel geri dönüşler alıyoruz. Süreç boyunca çok ilgiliydiler."</p>
+          <div class="testi-user">
+            <div class="testi-avatar">A</div>
+            <div class="testi-info">
+              <h4>Ayşe K.</h4>
+              <p>Kafe Sahibi</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testi-text">"Klinik için hazırlanan online randevu sistemi işlerimizi çok kolaylaştırdı. Hızlı teslimat ve kaliteli tasarım için teşekkürler."</p>
+          <div class="testi-user">
+            <div class="testi-avatar">M</div>
+            <div class="testi-info">
+              <h4>Dr. Mehmet Y.</h4>
+              <p>Klinik Yöneticisi</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testi-text">"Bütçeme en uygun paketi seçmeme yardımcı oldular. Sitemin mobil görünümü ve hızı gerçekten harika. Kesinlikle tavsiye ederim."</p>
+          <div class="testi-user">
+            <div class="testi-avatar">S</div>
+            <div class="testi-info">
+              <h4>Selin T.</h4>
+              <p>Butik Mağaza Sahibi</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -580,10 +760,8 @@ footer {
   <!-- SSS -->
   <section id="faq" class="faq-section">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Sıkça Sorulan Sorular</h2>
-      </div>
-      <div class="faq-list">
+      <div class="section-head reveal"><h2>Sıkça Sorulan Sorular</h2></div>
+      <div class="faq-list reveal">
         <details>
           <summary>Teslim süresi ne kadar? <span class="faq-icon">+</span></summary>
           <div class="faq-content">Seçtiğiniz pakete ve sayfa sayısına göre değişmekle birlikte, ortalama 3 ila 10 iş günü arasında siteniz yayına hazır olur. Acil ihtiyaçlarınız için hızlandırılmış teslimat seçeneklerimiz mevcuttur.</div>
@@ -596,6 +774,14 @@ footer {
           <summary>Siteyi kendim güncelleyebilir miyim? <span class="faq-icon">+</span></summary>
           <div class="faq-content">Küçük metin ve fotoğraf değişikliklerini bizimle iletişime geçerek yapabilirsiniz. Daha kapsamlı güncellemeler için size özel bir yönetim paneli sunuyoruz veya teknik destek paketimizden faydalanabilirsiniz.</div>
         </details>
+        <details>
+          <summary>Ödeme nasıl yapılıyor? <span class="faq-icon">+</span></summary>
+          <div class="faq-content">Projeye başlarken %50 ön ödeme, teslimat ve onay sonrasında ise %50 kalan bakiye şeklinde ödeme yapabilirsiniz. Havale/EFT veya kredi kartı ile ödeme kabul ediyoruz.</div>
+        </details>
+        <details>
+          <summary>Sektörüm listede yok, yine de yapabilir misiniz? <span class="faq-icon">+</span></summary>
+          <div class="faq-content">Fark etmez. Emlakçıdan veteriner kliniğine, eğitim kurumundan yerel üreticiye kadar her sektöre özel tasarım yapıyoruz. İşletmeni anlat, sana özel çözüm sunalım.</div>
+        </details>
       </div>
     </div>
   </section>
@@ -606,9 +792,7 @@ footer {
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="brand">
-          <div class="brand-icon">L</div> LocalWeb.ios
-        </a>
+        <a href="#" class="brand"><div class="brand-icon">L</div> LocalWeb.ios</a>
         <p>Yerel işletmelerin dijital dünyada güçlü bir varlık göstermesi için modern, hızlı ve SEO uyumlu web siteleri tasarlıyoruz.</p>
       </div>
       <div class="footer-links">
@@ -617,13 +801,14 @@ footer {
           <li><a href="#features">Neden Biz?</a></li>
           <li><a href="#calculator">Teklif Al</a></li>
           <li><a href="#portfolio">Portfolyo</a></li>
+          <li><a href="#pricing">Paketler</a></li>
           <li><a href="#faq">SSS</a></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>İletişim</h4>
         <ul>
-          <li><a href="https://www.instagram.com/localweb.io?jplx=M29oZ2hxYzJubjVv" target="_blank" rel="noopener noreferrer">Instagram: @localweb.io</a></li>
+          <li><a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer">Instagram: @localweb.ios</a></li>
           <li><a href="#" onclick="copyToClipboard('Merhaba, işletmem için teklif almak istiyorum.', 'Mesaj Kopyalandı!'); return false;">Hazır Mesajı Kopyala</a></li>
         </ul>
       </div>
@@ -637,7 +822,7 @@ footer {
 
 <!-- Mobil Sabit Buton -->
 <div class="mobile-sticky">
-  <a href="https://www.instagram.com/localweb.io?jplx=M29oZ2hxYzJubjVv" target="_blank" rel="noopener noreferrer" class="btn btn-gradient">
+  <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient">
     Instagram'dan Hemen Yaz
   </a>
 </div>
@@ -670,9 +855,18 @@ footer {
 <script>
 "use strict";
 
-const IG_URL = 'https://www.instagram.com/localweb.io?jplx=M29oZ2hxYzJubjVv';
+const IG_URL = 'https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy';
 
-// --- TEMA ---
+// --- 1. İMLEÇ IŞIĞI (CURSOR GLOW) ---
+const cursorGlow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', (e) => {
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top = e.clientY + 'px';
+  if (cursorGlow.style.opacity === '0' || !cursorGlow.style.opacity) cursorGlow.style.opacity = '1';
+});
+document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
+
+// --- 2. TEMA ---
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 const sunIcon = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
@@ -683,30 +877,25 @@ function setTheme(theme) {
   localStorage.setItem('lw-theme', theme);
   themeIcon.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
 }
-
 themeToggle.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme');
   setTheme(current === 'dark' ? 'light' : 'dark');
 });
+setTheme(localStorage.getItem('lw-theme') || 'dark');
 
-const savedTheme = localStorage.getItem('lw-theme') || 'dark';
-setTheme(savedTheme);
-
-// --- MOBİL MENÜ ---
+// --- 3. MOBİL MENÜ ---
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-
 hamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('on');
   document.body.style.overflow = mobileMenu.classList.contains('on') ? 'hidden' : '';
 });
-
 function closeMenu() {
   mobileMenu.classList.remove('on');
   document.body.style.overflow = '';
 }
 
-// --- TOAST ---
+// --- 4. TOAST & KOPYALAMA ---
 let toastTimer;
 function showToast(msg) {
   const toast = document.getElementById('toast');
@@ -715,52 +904,75 @@ function showToast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove('on'), 2500);
 }
-
 function copyToClipboard(text, successMsg) {
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => {
-      showToast(successMsg);
-    }).catch(() => {
-      fallbackCopy(text, successMsg);
-    });
-  } else {
-    fallbackCopy(text, successMsg);
-  }
+    navigator.clipboard.writeText(text).then(() => showToast(successMsg)).catch(() => fallbackCopy(text, successMsg));
+  } else { fallbackCopy(text, successMsg); }
 }
-
 function fallbackCopy(text, successMsg) {
   const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  document.execCommand('copy');
-  ta.remove();
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
   showToast(successMsg);
 }
 
-// --- İNTERAKTİF ÖNİZLEME ŞABLONLARI ---
+// --- 5. SCROLL REVEAL (ANİMASYONLAR) ---
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('on');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealElements.forEach(el => revealObserver.observe(el));
+
+// --- 6. 3D TILT EFEKTİ (PORTFOLYO) ---
+function applyTilt() {
+  const cards = document.querySelectorAll('.port-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+    });
+  });
+}
+
+// --- 7. İNTERAKTİF ÖNİZLEME ŞABLONLARI (6 SEKTÖR) ---
 const templates = {
   kafe: {
-    url: 'kafekiyi.localweb.io',
+    url: 'kafekiyi.localweb.ios',
     html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#faf7f2;color:#3e2723;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #eee;font-size:12px;} .hero{padding:40px 20px;text-align:center;background:#3e2723;color:#faf7f2;} .hero h1{margin:0 0 10px;font-size:24px;font-family:serif;} .btn{display:inline-block;background:#d7ccc8;color:#3e2723;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:20px;} .card{background:#fff;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,0.05);} .card h3{font-size:14px;margin:0 0 5px;} .card p{font-size:11px;color:#666;}</style></head><body><div class="nav"><b>Kafe Kıyı</b><span>Menü | Hakkımızda | İletişim</span></div><div class="hero"><h1>Sıcacık Bir Mola</h1><p>Taze kahveler ve ev yapımı lezzetler.</p><a href="#" class="btn">Menüyü Gör</a></div><div class="grid"><div class="card"><h3>Filtre Kahve</h3><p>₺75</p></div><div class="card"><h3>Cheesecake</h3><p>₺95</p></div></div></body></html>`
   },
   klinik: {
-    url: 'klinikplus.localweb.io',
+    url: 'klinikplus.localweb.ios',
     html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f0f9ff;color:#0f172a;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e0f2fe;font-size:12px;color:#0284c7;} .hero{padding:40px 20px;text-align:center;background:#0284c7;color:#fff;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#fff;color:#0284c7;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .list{padding:20px;display:flex;flex-direction:column;gap:10px;} .item{background:#fff;padding:15px;border-radius:8px;border-left:4px solid #0284c7;font-size:13px;display:flex;justify-content:space-between;}</style></head><body><div class="nav"><b>Klinik Plus</b><span>Hizmetler | Doktorlar | Randevu</span></div><div class="hero"><h1>Sağlığınız İçin Buradayız</h1><p>Modern teknoloji ve uzman kadromuzla hizmetinizdeyiz.</p><a href="#" class="btn">Online Randevu Al</a></div><div class="list"><div class="item"><b>Ağız ve Diş Sağlığı</b><span>İncele →</span></div><div class="item"><b>Estetik Diş Hekimliği</b><span>İncele →</span></div></div></body></html>`
   },
   guzellik: {
-    url: 'lumiabeauty.localweb.io',
+    url: 'lumiabeauty.localweb.ios',
     html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#fdf4f8;color:#4c0519;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #fce7f3;font-size:12px;color:#be185d;} .hero{padding:40px 20px;text-align:center;background:linear-gradient(135deg,#fce7f3,#fbcfe1);color:#4c0519;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#be185d;color:#fff;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .services{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px;} .srv{background:#fff;border-radius:8px;padding:15px;text-align:center;font-size:13px;border:1px solid #fbcfe1;}</style></head><body><div class="nav"><b>Lumia Beauty</b><span>Hizmetler | Galeri | Randevu</span></div><div class="hero"><h1>Kendinizi Özel Hissedin</h1><p>Saç, cilt ve tırnak bakımında uzman ekibimizle yenilenin.</p><a href="#" class="btn">Randevu Al</a></div><div class="services"><div class="srv"><b>Saç Kesim</b><br>₺450</div><div class="srv"><b>Cilt Bakımı</b><br>₺650</div><div class="srv"><b>Manikür</b><br>₺350</div><div class="srv"><b>Makyaj</b><br>₺500</div></div></body></html>`
   },
   hukuk: {
-    url: 'demirhukuk.localweb.io',
+    url: 'demirhukuk.localweb.ios',
     html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f8fafc;color:#0f172a;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e2e8f0;font-size:12px;color:#1e3a8a;} .hero{padding:50px 20px;text-align:center;background:#1e3a8a;color:#f8fafc;} .hero h1{margin:0 0 10px;font-size:24px;font-family:serif;} .btn{display:inline-block;background:#f8fafc;color:#1e3a8a;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .areas{padding:20px;display:flex;gap:10px;} .area{flex:1;background:#fff;padding:15px;border-radius:8px;border-top:3px solid #1e3a8a;text-align:center;font-size:13px;}</style></head><body><div class="nav"><b>Demir Hukuk</b><span>Alanlarımız | Ekibimiz | İletişim</span></div><div class="hero"><h1>Haklarınızı Güvenle Savunun</h1><p>20 yılı aşkın tecrübe ve sonuç odaklı yaklaşım.</p><a href="#" class="btn">Ücretsiz Ön Görüşme</a></div><div class="areas"><div class="area"><b>Ticaret Hukuku</b></div><div class="area"><b>Aile Hukuku</b></div><div class="area"><b>İş Hukuku</b></div></div></body></html>`
   },
   butik: {
-    url: 'atelierbutik.localweb.io',
+    url: 'atelierbutik.localweb.ios',
     html: `<!DOCTYPE html><html><head><style>body{font-family:serif;margin:0;background:#faf9f6;color:#2d2d2d;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e5e5e5;font-size:12px;font-family:system-ui;color:#7f1d1d;} .hero{padding:40px 20px;text-align:center;background:#f0e6d6;} .hero h1{margin:0 0 10px;font-size:26px;color:#7f1d1d;} .btn{display:inline-block;background:#7f1d1d;color:#fff;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;font-family:system-ui;text-decoration:none;} .prods{padding:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;} .prod{background:#fff;padding:10px;text-align:center;border:1px solid #eee;font-size:11px;} .img-ph{aspect-ratio:1;background:#e5e5e5;margin-bottom:8px;border-radius:4px;}</style></head><body><div class="nav"><b>Atelier Butik</b><span>Koleksiyon | Hakkımızda</span></div><div class="hero"><h1>Zamansız Zarafet</h1><p>El yapımı deri ve tekstil ürünlerinde yeni sezon.</p><a href="#" class="btn">Koleksiyonu Keşfet</a></div><div class="prods"><div class="prod"><div class="img-ph"></div>Çanta<br><b>₺2.890</b></div><div class="prod"><div class="img-ph"></div>Kolye<br><b>₺890</b></div><div class="prod"><div class="img-ph"></div>Şal<br><b>₺1.490</b></div></div></body></html>`
+  },
+  emlak: {
+    url: 'prestijemlak.localweb.ios',
+    html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f8fafc;color:#1e293b;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e2e8f0;font-size:12px;color:#0f766e;} .hero{padding:40px 20px;text-align:center;background:#0f766e;color:#fff;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#fff;color:#0f766e;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .grid{padding:20px;display:flex;flex-direction:column;gap:10px;} .house{background:#fff;padding:15px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #e2e8f0;font-size:13px;}</style></head><body><div class="nav"><b>Prestij Emlak</b><span>İlanlar | Hakkımızda | İletişim</span></div><div class="hero"><h1>Hayalinizdeki Eve Kavuşun</h1><p>Size en uygun konut ve ticari gayrimenkul seçenekleri.</p><a href="#" class="btn">İlanları İncele</a></div><div class="grid"><div class="house"><b>3+1 Daire, Kadıköy</b><span>₺5.200.000</span></div><div class="house"><b>2+1 Rezidans, Beşiktaş</b><span>₺3.800.000</span></div></div></body></html>`
   }
 };
 
@@ -773,25 +985,16 @@ function switchTab(type, btn) {
   previewUrl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ${templates[type].url}`;
   previewIframe.srcdoc = templates[type].html;
 }
-
-// Başlangıç
 previewIframe.srcdoc = templates.kafe.html;
 
-// --- TEKLİF HESAPLAYICI ---
+// --- 8. TEKLİF HESAPLAYICI ---
 function updateCalc() {
   ['typeOpts', 'pageOpts'].forEach(id => {
     const opts = document.getElementById(id).querySelectorAll('.calc-opt');
-    opts.forEach(opt => {
-      if (opt.querySelector('input').checked) opt.classList.add('selected');
-      else opt.classList.remove('selected');
-    });
+    opts.forEach(opt => opt.classList.toggle('selected', opt.querySelector('input').checked));
   });
-
   const addonOpts = document.getElementById('addonOpts').querySelectorAll('.calc-opt');
-  addonOpts.forEach(opt => {
-    if (opt.querySelector('input').checked) opt.classList.add('selected');
-    else opt.classList.remove('selected');
-  });
+  addonOpts.forEach(opt => opt.classList.toggle('selected', opt.querySelector('input').checked));
 
   let days = 3;
   const pages = document.querySelector('input[name="pages"]:checked').value;
@@ -801,8 +1004,15 @@ function updateCalc() {
   const addons = Array.from(document.querySelectorAll('#addonOpts input:checked'));
   days += addons.length;
 
-  document.getElementById('calcTime').textContent = `${days} İş Günü`;
-  document.getElementById('calcDesc').textContent = `Seçmiş olduğunuz ${addons.length > 0 ? addons.length + ' ekstra özellik ve ' : ''}${pages} ile projeniz yaklaşık ${days} iş günü içinde tamamlanacaktır.`;
+  const timeEl = document.getElementById('calcTime');
+  const descEl = document.getElementById('calcDesc');
+  
+  timeEl.style.opacity = 0;
+  setTimeout(() => {
+    timeEl.textContent = `${days} İş Günü`;
+    descEl.textContent = `Seçmiş olduğunuz ${addons.length > 0 ? addons.length + ' ekstra özellik ve ' : ''}${pages} ile projeniz yaklaşık ${days} iş günü içinde tamamlanacaktır.`;
+    timeEl.style.opacity = 1;
+  }, 150);
 }
 
 function sendQuote() {
@@ -819,18 +1029,17 @@ function sendQuote() {
   msg += `Bu özelliklerle ilgili detaylı bilgi ve fiyat teklifi alabilir miyim?`;
 
   copyToClipboard(msg, 'Teklif mesajı kopyalandı! Instagram açılıyor...');
-  setTimeout(() => {
-    window.open(IG_URL, '_blank', 'noopener,noreferrer');
-  }, 800);
+  setTimeout(() => { window.open(IG_URL, '_blank', 'noopener,noreferrer'); }, 800);
 }
 
-// --- PORTFOLYO ---
+// --- 9. PORTFOLYO & MODAL ---
 const portfolioData = [
   { id: 'kafe', tag: 'Kafe & Restoran', title: 'Kafe Kıyı', desc: 'Sıcak, samimi ve iştah açıcı tasarım.', color: '#3e2723' },
   { id: 'klinik', tag: 'Sağlık & Klinik', title: 'Klinik Plus', desc: 'Güven veren, temiz ve profesyonel.', color: '#0284c7' },
   { id: 'guzellik', tag: 'Güzellik & Bakım', title: 'Lumia Beauty', desc: 'Zarif, modern ve davetkar arayüz.', color: '#be185d' },
   { id: 'hukuk', tag: 'Hukuk & Danışmanlık', title: 'Demir Hukuk', desc: 'Kurumsal, ciddi ve güvenilir.', color: '#1e3a8a' },
-  { id: 'butik', tag: 'Butik & E-Ticaret', title: 'Atelier Butik', desc: 'Şık, ürün odaklı ve hızlı.', color: '#7f1d1d' }
+  { id: 'butik', tag: 'Butik & E-Ticaret', title: 'Atelier Butik', desc: 'Şık, ürün odaklı ve hızlı.', color: '#7f1d1d' },
+  { id: 'emlak', tag: 'Emlak & Gayrimenkul', title: 'Prestij Emlak', desc: 'Güven veren, kurumsal ve şık.', color: '#0f766e' }
 ];
 
 function renderPortfolio() {
@@ -857,9 +1066,9 @@ function renderPortfolio() {
       </div>
     </div>
   `).join('');
+  applyTilt();
 }
 
-// --- MODAL ---
 const modal = document.getElementById('portfolioModal');
 const modalIframe = document.getElementById('modalIframe');
 const modalIframeWrap = document.getElementById('modalIframeWrap');
@@ -873,13 +1082,11 @@ function openModal(id) {
   modal.classList.add('on');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal() {
   modal.classList.remove('on');
   modalIframe.srcdoc = '';
   document.body.style.overflow = '';
 }
-
 function setModalDevice(device) {
   const btnD = document.getElementById('btnDesktop');
   const btnM = document.getElementById('btnMobile');
