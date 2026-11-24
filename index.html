@@ -3,454 +3,312 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#050508">
-<meta name="description" content="LocalWeb.ios — Yerel işletmeler için premium web tasarımı. Hızlı, mobil uyumlu, SEO dostu web siteleri ve dijital çözümler.">
-<meta name="keywords" content="web tasarım, yerel işletme, kafe web sitesi, klinik web sitesi, butik web tasarım, localweb">
-<meta property="og:title" content="LocalWeb.ios | Premium Web Tasarım Ajansı">
-<meta property="og:description" content="İşletmenizi dijitale taşıyın. Hızlı, estetik ve SEO uyumlu web siteleri.">
-<meta property="og:type" content="website">
-<title>LocalWeb.ios | Premium Web Tasarım Ajansı</title>
+<meta name="theme-color" content="#09090b">
+<meta name="description" content="LocalWeb.ios — Yerel işletmeler için premium web tasarım stüdyosu. Hızlı, estetik ve SEO uyumlu web siteleri.">
+<title>LocalWeb.ios | Premium Web Tasarım Stüdyosu</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%23ff4b8b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='sans-serif' font-size='34' font-weight='800' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   1. PREMIUM DEĞİŞKENLER & RESET
+   1. PREMIUM DEĞİŞKENLER & RESET (APPLE / LINEAR STYLE)
    ============================================================ */
 :root {
-  --bg: #050508;
-  --bg-alt: #0a0a10;
-  --surface: rgba(255, 255, 255, 0.03);
-  --surface-hover: rgba(255, 255, 255, 0.06);
+  --bg: #09090b;
+  --surface: #18181b;
+  --surface-hover: #27272a;
   --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
-  --text: #ffffff;
-  --text-muted: #94a3b8;
-  --primary: #7c5cff;
-  --secondary: #ff4b8b;
-  --accent: #00e5ff;
-  --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-  --font-body: 'Inter', sans-serif;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --nav-h: 80px;
-  --radius: 16px;
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --primary: #6366f1; /* Indigo */
+  --primary-hover: #4f46e5;
+  --accent: #818cf8;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Instrument Serif', serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+  
+  --nav-h: 72px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
   --radius-lg: 24px;
-  --radius-xl: 32px;
-  --shadow-glow: 0 0 40px -10px rgba(124, 92, 255, 0.5);
-  --shadow-card: 0 20px 40px -10px rgba(0,0,0,0.5);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.5);
 }
 
 [data-theme="light"] {
   --bg: #fafafa;
-  --bg-alt: #f0f0f5;
-  --surface: rgba(0, 0, 0, 0.02);
-  --surface-hover: rgba(0, 0, 0, 0.04);
+  --surface: #ffffff;
+  --surface-hover: #f4f4f5;
   --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.15);
+  --border-hover: rgba(0, 0, 0, 0.16);
   --text: #09090b;
-  --text-muted: #64748b;
-  --shadow-card: 0 20px 40px -10px rgba(0,0,0,0.1);
+  --text-muted: #71717a;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --accent: #6366f1;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 20px); }
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  position: relative;
 }
-::selection { background: var(--primary); color: #fff; }
+
+/* Arka Plan Grid Dokusu (Linear Style) */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background-image: 
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  opacity: 0.3; pointer-events: none;
+}
+body::after {
+  content: ""; position: fixed; top: -20%; left: 50%; transform: translateX(-50%);
+  width: 80vw; height: 60vh; background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 60%);
+  z-index: -1; pointer-events: none;
+}
+
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 img, svg { display: block; max-width: 100%; }
-.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-@media (max-width: 640px) { .wrap { padding: 0 20px; } }
+.wrap { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
-p { color: var(--text-muted); }
-
-/* ============================================================
-   2. ARKA PLAN EFEKTLERİ & CURSOR
-   ============================================================ */
-.bg-glow {
-  position: fixed; border-radius: 50%; filter: blur(120px); z-index: -1; opacity: 0.35; pointer-events: none;
-}
-.glow-1 { top: -15%; left: -10%; width: 60vw; height: 60vw; background: var(--primary); animation: float 20s infinite alternate; }
-.glow-2 { bottom: -15%; right: -10%; width: 50vw; height: 50vw; background: var(--secondary); animation: float 25s infinite alternate-reverse; }
-.glow-3 { top: 40%; left: 30%; width: 30vw; height: 30vw; background: var(--accent); opacity: 0.15; animation: float 15s infinite alternate; }
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(10%, 15%) scale(1.1); }
-}
-
-#cursor-glow {
-  position: fixed; top: 0; left: 0; width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(124,92,255,0.12) 0%, transparent 60%);
-  border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;
-  transition: opacity 0.3s ease; opacity: 0;
-}
+h1, h2, h3, h4 { font-family: var(--font-mono); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+p { color: var(--text-muted); font-size: 15px; }
 
 /* ============================================================
-   3. NAVİGASYON
+   2. NAVİGASYON
    ============================================================ */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h);
-  display: flex; align-items: center; background: rgba(5, 5, 8, 0.7);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  display: flex; align-items: center; background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border); transition: all 0.3s;
 }
-[data-theme="light"] .nav { background: rgba(250, 250, 250, 0.7); }
+[data-theme="light"] .nav { background: rgba(250, 250, 250, 0.6); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; }
-.brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 22px; font-weight: 800; z-index: 102; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 18px; font-weight: 700; }
 .brand-icon {
-  width: 38px; height: 38px; border-radius: 10px; background: var(--gradient);
-  display: grid; place-items: center; color: #fff; font-size: 18px; box-shadow: var(--shadow-glow);
+  width: 28px; height: 28px; border-radius: 6px; background: var(--text);
+  display: grid; place-items: center; color: var(--bg); font-size: 14px;
 }
-.nav-links { display: flex; gap: 32px; align-items: center; font-weight: 500; font-size: 14px; }
-.nav-links a { color: var(--text-muted); transition: color 0.2s; position: relative; }
+.nav-links { display: flex; gap: 28px; align-items: center; font-weight: 500; font-size: 13.5px; }
+.nav-links a { color: var(--text-muted); transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-  background: var(--gradient); transition: width 0.3s; border-radius: 2px;
+.nav-actions { display: flex; gap: 12px; align-items: center; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 18px; border-radius: var(--radius-sm); font-weight: 500; font-size: 14px;
+  transition: all 0.2s ease; white-space: nowrap;
 }
-.nav-links a:hover::after { width: 100%; }
-.nav-actions { display: flex; gap: 16px; align-items: center; }
+.btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
+.btn-primary:hover { background: var(--text-muted); border-color: var(--text-muted); transform: translateY(-1px); }
+.btn-outline { border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.btn-outline:hover { border-color: var(--border-hover); background: var(--surface-hover); }
+.btn-accent { background: var(--primary); color: #fff; }
+.btn-accent:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
+
 .icon-btn {
-  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
-  border: 1px solid var(--border); color: var(--text); transition: all 0.2s; background: var(--surface);
+  width: 36px; height: 36px; border-radius: var(--radius-sm); display: grid; place-items: center;
+  border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s;
 }
-.icon-btn:hover { background: var(--surface-hover); border-color: var(--border-hover); transform: scale(1.05); }
-.hamburger { display: none; z-index: 102; }
-@media (max-width: 960px) {
+.icon-btn:hover { background: var(--surface-hover); border-color: var(--border-hover); }
+
+.hamburger { display: none; }
+@media (max-width: 860px) {
   .nav-links, .nav-actions .btn-primary { display: none; }
   .hamburger { display: grid; }
 }
 
 /* Mobil Menü */
 .mobile-menu {
-  position: fixed; inset: 0; z-index: 101; background: var(--bg);
-  display: flex; flex-direction: column; padding: calc(var(--nav-h) + 20px) 24px 40px;
-  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto;
+  position: fixed; inset: 0; z-index: 99; background: var(--bg);
+  display: flex; flex-direction: column; padding: calc(var(--nav-h) + 24px) 24px 40px;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .mobile-menu.on { transform: translateX(0); }
-.mobile-menu a {
-  font-family: var(--font-display); font-size: 28px; font-weight: 700;
-  padding: 16px 0; border-bottom: 1px solid var(--border); color: var(--text);
-}
-.mobile-menu .btn { margin-top: 32px; font-size: 16px; padding: 16px; }
+.mobile-menu a { font-family: var(--font-mono); font-size: 24px; font-weight: 600; padding: 16px 0; border-bottom: 1px solid var(--border); }
 
 /* ============================================================
-   4. BUTONLAR
+   3. HERO
    ============================================================ */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 15px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; white-space: nowrap;
-}
-.btn svg { width: 18px; height: 18px; flex: none; }
-.btn-primary { background: var(--text); color: var(--bg); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,255,255,0.15); }
-.btn-outline { border-color: var(--border); background: var(--surface); color: var(--text); backdrop-filter: blur(10px); }
-.btn-outline:hover { border-color: var(--border-hover); background: var(--surface-hover); transform: translateY(-2px); }
-.btn-gradient { background: var(--gradient); color: #fff; box-shadow: var(--shadow-glow); }
-.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 15px 35px -5px rgba(124, 92, 255, 0.6); }
-
-/* ============================================================
-   5. HERO & CANLI ÖNİZLEME
-   ============================================================ */
-.hero { padding: calc(var(--nav-h) + 80px) 0 80px; text-align: center; position: relative; }
+.hero { padding: calc(var(--nav-h) + 100px) 0 80px; text-align: center; }
 .badge {
-  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
   border-radius: 100px; background: var(--surface); border: 1px solid var(--border);
-  font-size: 13px; font-weight: 500; margin-bottom: 32px; backdrop-filter: blur(10px);
+  font-size: 12px; font-weight: 500; margin-bottom: 24px; color: var(--text-muted);
 }
-.badge span.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-.hero h1 { font-size: clamp(40px, 7vw, 80px); margin-bottom: 24px; }
-.hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero p.lead { font-size: clamp(16px, 2vw, 20px); max-width: 640px; margin: 0 auto 40px; }
-.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+.badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 8px var(--primary); }
+.hero h1 { font-size: clamp(44px, 7vw, 84px); margin-bottom: 24px; font-family: var(--font-display); font-weight: 400; }
+.hero h1 i { font-style: italic; color: var(--primary); }
+.hero p { font-size: clamp(16px, 2vw, 19px); max-width: 580px; margin: 0 auto 40px; }
+.hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
 
-.preview-container { max-width: 1000px; margin: 0 auto; position: relative; }
-.preview-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; position: relative; z-index: 2; }
+/* Önizleme Tarayıcı */
+.preview-container { max-width: 950px; margin: 0 auto; }
+.preview-tabs { display: flex; justify-content: center; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
 .tab-btn {
-  padding: 10px 20px; border-radius: 100px; font-size: 14px; font-weight: 600;
-  background: var(--surface); border: 1px solid var(--border); color: var(--text-muted);
-  transition: all 0.3s; backdrop-filter: blur(10px); cursor: pointer;
+  padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 500;
+  border: 1px solid transparent; color: var(--text-muted); transition: all 0.2s;
 }
-.tab-btn:hover { border-color: var(--text-muted); color: var(--text); }
-.tab-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { background: var(--surface); border-color: var(--border); color: var(--text); }
 
-.browser-mockup {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
-  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.7); position: relative; z-index: 1; backdrop-filter: blur(20px);
+.browser {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  overflow: hidden; box-shadow: var(--shadow-md);
 }
-.browser-header { padding: 14px 20px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); }
-.browser-dots { display: flex; gap: 8px; }
-.browser-dots i { width: 10px; height: 10px; border-radius: 50%; background: #333; }
-.browser-dots i:nth-child(1) { background: #ff5f56; }
-.browser-dots i:nth-child(2) { background: #ffbd2e; }
-.browser-dots i:nth-child(3) { background: #27c93f; }
-.browser-url {
-  flex: 1; background: var(--surface); border: 1px solid var(--border); padding: 8px 16px;
-  border-radius: 8px; font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
+.browser-header {
+  padding: 12px 16px; display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.1);
 }
-.browser-body { height: 500px; background: #fff; position: relative; }
-@media (max-width: 768px) { .browser-body { height: 350px; } }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 10px; height: 10px; border-radius: 50%; background: #333; }
+.dots i:nth-child(1) { background: #ff5f56; }
+.dots i:nth-child(2) { background: #ffbd2e; }
+.dots i:nth-child(3) { background: #27c93f; }
+.url-bar {
+  flex: 1; background: var(--bg); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 12px; font-family: var(--font-mono); color: var(--text-muted);
+}
+.browser-body { height: 480px; background: #fff; }
+@media (max-width: 768px) { .browser-body { height: 320px; } }
 .browser-body iframe { width: 100%; height: 100%; border: none; display: block; }
 
 /* ============================================================
-   6. ÖZELLİKLER (BENTO GRID)
+   4. ÖZELLİKLER (NEDEN BİZ?)
    ============================================================ */
-.features { padding: 100px 0; }
-.section-head { text-align: center; margin-bottom: 60px; }
-.section-head h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
-.section-head p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+.section { padding: 100px 0; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 12px; }
+.section-header p { font-size: 16px; max-width: 500px; margin: 0 auto; }
 
-.bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-@media (max-width: 900px) { .bento-grid { grid-template-columns: 1fr; } }
-.bento-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 36px; transition: all 0.4s; display: flex; flex-direction: column; position: relative; overflow: hidden;
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 32px; transition: all 0.3s;
 }
-.bento-card:hover { background: var(--surface-hover); border-color: var(--border-hover); transform: translateY(-5px); }
-.bento-card.wide { grid-column: span 2; }
-@media (max-width: 900px) { .bento-card.wide { grid-column: span 1; } }
-.icon-wrap {
-  width: 52px; height: 52px; border-radius: 14px; background: rgba(124, 92, 255, 0.1);
-  display: grid; place-items: center; color: var(--primary); margin-bottom: 24px; border: 1px solid rgba(124,92,255,0.2);
-}
-.bento-card h3 { font-size: 22px; margin-bottom: 12px; }
-.bento-card p { font-size: 15px; }
+.card:hover { border-color: var(--border-hover); background: var(--surface-hover); transform: translateY(-2px); }
+.card .icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(99,102,241,0.1); color: var(--primary); display: grid; place-items: center; margin-bottom: 20px; border: 1px solid rgba(99,102,241,0.2); }
+.card h3 { font-size: 18px; margin-bottom: 10px; }
+.card p { font-size: 14px; line-height: 1.6; }
 
 /* ============================================================
-   7. TEKLİF HESAPLAYICI
+   5. PORTFOLYO
    ============================================================ */
-.calculator { padding: 100px 0; }
-.calc-wrapper {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--surface); 
-  border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 48px; position: relative; overflow: hidden;
-  box-shadow: var(--shadow-card);
+.port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 860px) { .port-grid { grid-template-columns: 1fr; } }
+.port-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  overflow: hidden; cursor: pointer; transition: all 0.3s;
 }
-@media (max-width: 900px) { .calc-wrapper { grid-template-columns: 1fr; padding: 32px 24px; } }
-.calc-section { margin-bottom: 32px; }
-.calc-section h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; }
-.calc-options { display: flex; flex-wrap: wrap; gap: 12px; }
+.port-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+.port-img { height: 180px; position: relative; display: grid; place-items: center; }
+.port-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); opacity: 0; display: grid; place-items: center; transition: opacity 0.3s; backdrop-filter: blur(2px); }
+.port-card:hover .port-overlay { opacity: 1; }
+.port-overlay span { color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.port-info { padding: 20px; }
+.port-info h4 { font-size: 16px; margin-bottom: 4px; }
+.port-info p { font-size: 13px; }
+
+/* ============================================================
+   6. TEKLİF HESAPLAYICI (FİYAT YERİNE)
+   ============================================================ */
+.calc-container {
+  max-width: 800px; margin: 0 auto; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px;
+  box-shadow: var(--shadow-md);
+}
+@media (max-width: 768px) { .calc-container { padding: 24px; } }
+.calc-step { margin-bottom: 32px; }
+.calc-step label { display: block; font-family: var(--font-mono); font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+.calc-options { display: flex; flex-wrap: wrap; gap: 10px; }
 .calc-opt {
-  padding: 12px 20px; border-radius: 12px; border: 1px solid var(--border);
-  background: var(--bg); font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+  padding: 10px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: var(--bg); font-size: 14px; font-weight: 500; transition: all 0.2s;
 }
 .calc-opt:hover { border-color: var(--text-muted); }
+.calc-opt.selected { background: var(--primary); border-color: var(--primary); color: #fff; }
 .calc-opt input { display: none; }
-.calc-opt.selected { background: rgba(124, 92, 255, 0.15); border-color: var(--primary); color: var(--primary); }
 
-.calc-summary {
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 40px; display: flex; flex-direction: column; justify-content: center; position: relative;
+.calc-result {
+  background: var(--bg); border: 1px dashed var(--border-hover); border-radius: var(--radius-md);
+  padding: 24px; text-align: center; margin-top: 40px;
 }
-.calc-summary::before {
-  content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
-  background: var(--gradient); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.4; pointer-events: none;
-}
-.calc-time { font-family: var(--font-display); font-size: 52px; font-weight: 800; margin-bottom: 8px; line-height: 1; transition: opacity 0.2s; }
-.calc-desc { font-size: 15px; margin-bottom: 32px; }
+.calc-result h4 { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; font-family: var(--font-sans); }
+.calc-result .time { font-size: 32px; font-weight: 700; font-family: var(--font-mono); color: var(--primary); margin-bottom: 20px; }
+.calc-result .btn { width: 100%; padding: 14px; font-size: 15px; }
 
 /* ============================================================
-   8. PORTFOLYO (3D TILT)
+   7. SSS
    ============================================================ */
-.portfolio { padding: 100px 0; background: var(--bg-alt); }
-.port-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
-.port-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  overflow: hidden; cursor: pointer; transition: transform 0.1s ease, border-color 0.3s; transform-style: preserve-3d;
-}
-.port-card:hover { border-color: var(--border-hover); }
-.port-img {
-  height: 240px; position: relative; overflow: hidden; display: grid; place-items: center; transform: translateZ(20px);
-}
-.port-img .mockup-shape {
-  width: 80%; height: 70%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.1); display: flex; flex-direction: column; overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3); transition: transform 0.4s;
-}
-.port-card:hover .mockup-shape { transform: scale(1.05); }
-.port-overlay {
-  position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-  display: grid; place-items: center; opacity: 0; transition: opacity 0.3s; transform: translateZ(30px);
-}
-.port-card:hover .port-overlay { opacity: 1; }
-.port-overlay span { color: #fff; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-.port-info { padding: 24px; transform: translateZ(10px); }
-.port-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.port-info h3 { font-size: 22px; margin-bottom: 8px; }
-.port-info p { font-size: 14px; }
-
-/* ============================================================
-   9. FİYATLANDIRMA
-   ============================================================ */
-.pricing { padding: 100px 0; }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
-@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
-.price-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 40px; display: flex; flex-direction: column; transition: all 0.3s; position: relative;
-}
-.price-card:hover { border-color: var(--border-hover); transform: translateY(-5px); }
-.price-card.hot { border: 2px solid transparent; background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--gradient) border-box; box-shadow: var(--shadow-glow); }
-.price-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 100px; letter-spacing: 0.5px; }
-.price-name { font-size: 16px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-.price-amount { font-family: var(--font-display); font-size: 48px; font-weight: 800; margin-bottom: 8px; }
-.price-amount small { font-size: 16px; font-weight: 500; color: var(--text-muted); }
-.price-features { list-style: none; margin: 32px 0; flex: 1; display: flex; flex-direction: column; gap: 16px; }
-.price-features li { font-size: 15px; display: flex; align-items: center; gap: 12px; }
-.price-features li svg { color: var(--accent); flex: none; }
-
-/* ============================================================
-   10. SÜREÇ (TIMELINE)
-   ============================================================ */
-.process { padding: 100px 0; background: var(--bg-alt); }
-.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
-@media (max-width: 900px) { .timeline { grid-template-columns: 1fr; gap: 40px; } }
-.step { text-align: center; position: relative; }
-.step-num {
-  width: 60px; height: 60px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
-  display: grid; place-items: center; font-family: var(--font-display); font-size: 24px; font-weight: 800;
-  margin: 0 auto 24px; color: var(--primary); position: relative; z-index: 1;
-}
-.step h4 { font-size: 20px; margin-bottom: 12px; }
-.step p { font-size: 14px; }
-@media (min-width: 901px) {
-  .step:not(:last-child)::after {
-    content: ''; position: absolute; top: 30px; left: 60%; width: 80%; height: 2px;
-    background: linear-gradient(90deg, var(--border), transparent); z-index: 0;
-  }
-}
-
-/* ============================================================
-   11. YORUMLAR
-   ============================================================ */
-.testimonials { padding: 100px 0; }
-.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-@media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
-.testi-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; }
-.testi-stars { display: flex; gap: 4px; color: #fbbf24; margin-bottom: 20px; }
-.testi-stars svg { width: 18px; height: 18px; }
-.testi-text { font-size: 16px; line-height: 1.7; margin-bottom: 24px; font-style: italic; color: var(--text); }
-.testi-user { display: flex; align-items: center; gap: 16px; }
-.testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--gradient); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 18px; }
-.testi-info h4 { font-size: 16px; }
-.testi-info p { font-size: 13px; }
-
-/* ============================================================
-   12. SSS
-   ============================================================ */
-.faq-section { padding: 100px 0; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
-details[open] { border-color: var(--primary); background: var(--bg-alt); }
-summary { padding: 24px; font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+.faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+summary { padding: 20px; font-weight: 500; font-family: var(--font-mono); cursor: pointer; display: flex; justify-content: space-between; list-style: none; }
 summary::-webkit-details-marker { display: none; }
-.faq-icon { transition: transform 0.3s; }
-details[open] .faq-icon { transform: rotate(45deg); color: var(--primary); }
-.faq-content { padding: 0 24px 24px; font-size: 15px; line-height: 1.7; }
+details[open] summary { border-bottom: 1px solid var(--border); }
+.faq-content { padding: 20px; color: var(--text-muted); font-size: 14px; }
 
 /* ============================================================
-   13. FOOTER & MOBİL SABİT BUTON & TOAST
+   8. FOOTER
    ============================================================ */
-footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-alt); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
-.footer-brand p { margin-top: 16px; max-width: 300px; font-size: 14px; }
-.footer-links h4 { font-size: 16px; margin-bottom: 20px; }
-.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.footer-links a { color: var(--text-muted); font-size: 14px; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
-.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 16px; }
+footer { border-top: 1px solid var(--border); padding: 60px 0 30px; background: var(--bg); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-content p { font-size: 13px; }
 
-.mobile-sticky { position: fixed; bottom: 24px; left: 24px; right: 24px; z-index: 90; display: none; }
+/* Mobil Sabit Buton */
+.mobile-sticky { position: fixed; bottom: 20px; left: 20px; right: 20px; z-index: 90; display: none; }
 @media (max-width: 768px) { .mobile-sticky { display: block; } }
-.mobile-sticky .btn { width: 100%; padding: 18px; font-size: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.mobile-sticky .btn { width: 100%; padding: 16px; font-size: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-#toast {
-  position: fixed; bottom: 80px; left: 50%; transform: translate(-50%, 20px);
-  background: var(--text); color: var(--bg); padding: 14px 28px; border-radius: 100px;
-  font-weight: 600; font-size: 14px; opacity: 0; pointer-events: none;
-  transition: all 0.3s; z-index: 300; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
+/* Modal */
+.modal { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.9); backdrop-filter: blur(8px); display: none; place-items: center; padding: 20px; }
+.modal.on { display: grid; }
+.modal-box { width: 100%; max-width: 1000px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; height: 90vh; }
+.modal-head { padding: 16px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+.modal-body { flex: 1; background: #fff; }
+
+/* Toast */
+#toast { position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 20px); background: var(--text); color: var(--bg); padding: 12px 24px; border-radius: 100px; font-weight: 600; font-size: 13px; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 300; }
 #toast.on { opacity: 1; transform: translate(-50%, 0); }
-
-/* ============================================================
-   14. MODAL
-   ============================================================ */
-.modal {
-  position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
-  display: none; place-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s;
-}
-.modal.on { display: grid; opacity: 1; }
-.modal-content {
-  width: 100%; max-width: 1100px; background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; height: 90vh;
-  animation: modalScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-@keyframes modalScale { from { transform: scale(0.95) translateY(20px); opacity: 0; } }
-.modal-header {
-  padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;
-  border-bottom: 1px solid var(--border); background: var(--surface);
-}
-.modal-controls { display: flex; gap: 8px; }
-.dev-btn { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-muted); border: 1px solid var(--border); cursor: pointer; background: none; }
-.dev-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-.modal-close { width: 32px; height: 32px; border-radius: 8px; background: var(--surface); display: grid; place-items: center; cursor: pointer; border: 1px solid var(--border); color: var(--text); }
-.modal-body { flex: 1; background: #111; padding: 24px; display: flex; justify-content: center; overflow-y: auto; }
-.iframe-wrapper { width: 100%; height: 100%; background: #fff; border-radius: 12px; overflow: hidden; transition: all 0.3s; }
-.iframe-wrapper.mobile { width: 375px; height: 700px; border-radius: 24px; border: 8px solid #222; }
-.iframe-wrapper iframe { width: 100%; height: 100%; border: none; }
-
-/* ============================================================
-   15. SCROLL REVEAL
-   ============================================================ */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-.reveal.on { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- İmleç Işığı -->
-<div id="cursor-glow"></div>
-
-<!-- Arka Plan Işıkları -->
-<div class="bg-glow glow-1"></div>
-<div class="bg-glow glow-2"></div>
-<div class="bg-glow glow-3"></div>
-
 <!-- Navbar -->
-<header class="nav" id="navbar">
+<header class="nav">
   <div class="wrap">
     <a href="#" class="brand"><div class="brand-icon">L</div> LocalWeb.ios</a>
     <nav class="nav-links">
       <a href="#features">Neden Biz?</a>
-      <a href="#calculator">Teklif Al</a>
       <a href="#portfolio">Portfolyo</a>
-      <a href="#pricing">Paketler</a>
+      <a href="#calculator">Teklif Al</a>
       <a href="#faq">SSS</a>
     </nav>
     <div class="nav-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Tema">
-        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <button class="icon-btn" id="themeToggle">
+        <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
-      <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        Hemen Başla
-      </a>
+      <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagram'dan Yaz</a>
       <button class="icon-btn hamburger" id="hamburger">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
@@ -459,46 +317,38 @@ footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: 
 <!-- Mobil Menü -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#features" onclick="closeMenu()">Neden Biz?</a>
-  <a href="#calculator" onclick="closeMenu()">Teklif Al</a>
   <a href="#portfolio" onclick="closeMenu()">Portfolyo</a>
-  <a href="#pricing" onclick="closeMenu()">Paketler</a>
+  <a href="#calculator" onclick="closeMenu()">Teklif Al</a>
   <a href="#faq" onclick="closeMenu()">SSS</a>
-  <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient">
-    @localweb.ios ile İletişime Geç
-  </a>
+  <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:auto; justify-content:center;">@localweb.ios ile İletişime Geç</a>
 </div>
 
 <main>
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
     <div class="wrap">
-      <div class="badge reveal"><span class="dot"></span> Yeni Nesil Dijital Ajans</div>
-      <h1 class="reveal">Dijital Dünyada<br><span>Fark Yaratan</span> Tasarımlar</h1>
-      <p class="lead reveal">İşletmenizi sıradanlıktan kurtarın. Hızlı, mobil uyumlu ve Google dostu web siteleri ile rakiplerinizin bir adım önüne geçin.</p>
-      <div class="hero-cta reveal">
-        <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient" style="padding: 18px 36px; font-size: 16px;">
-          Hemen Teklif Alın
-        </a>
-        <button onclick="copyToClipboard('Merhaba LocalWeb.ios, işletmem için web sitesi yaptırmak istiyorum.', 'DM Mesajı Kopyalandı!')" class="btn btn-outline" style="padding: 18px 36px; font-size: 16px;">
-          DM Mesajını Kopyala
-        </button>
+      <div class="badge"><span class="dot"></span> Yeni Nesil Tasarım Stüdyosu</div>
+      <h1>Dijital Varlığınızı<br><i>Yeniden Tasarlayın.</i></h1>
+      <p>Kafe, klinik, butik ve yerel işletmeler için hızlı, estetik ve müşteri kazandıran premium web siteleri.</p>
+      <div class="hero-cta">
+        <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="padding: 14px 28px; font-size: 15px;">Hemen Teklif Alın</a>
+        <button onclick="copyToClipboard('Merhaba LocalWeb.ios, işletmem için web sitesi yaptırmak istiyorum.', 'DM Mesajı Kopyalandı!')" class="btn btn-outline" style="padding: 14px 28px; font-size: 15px;">DM Mesajını Kopyala</button>
       </div>
 
       <!-- İnteraktif Tarayıcı -->
-      <div class="preview-container reveal">
+      <div class="preview-container">
         <div class="preview-tabs">
           <button class="tab-btn active" onclick="switchTab('kafe', this)">☕ Kafe</button>
           <button class="tab-btn" onclick="switchTab('klinik', this)">🩺 Klinik</button>
           <button class="tab-btn" onclick="switchTab('guzellik', this)">💇‍♀️ Güzellik</button>
-          <button class="tab-btn" onclick="switchTab('hukuk', this)">⚖️ Avukatlık</button>
+          <button class="tab-btn" onclick="switchTab('hukuk', this)">⚖️ Hukuk</button>
           <button class="tab-btn" onclick="switchTab('butik', this)">🛍️ Butik</button>
-          <button class="tab-btn" onclick="switchTab('emlak', this)">🏠 Emlak</button>
         </div>
-        <div class="browser-mockup">
+        <div class="browser">
           <div class="browser-header">
-            <div class="browser-dots"><i></i><i></i><i></i></div>
-            <div class="browser-url" id="previewUrl">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="url-bar" id="previewUrl">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline; margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               kafekiyi.localweb.ios
             </div>
           </div>
@@ -510,363 +360,154 @@ footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: 
     </div>
   </section>
 
-  <!-- BENTO ÖZELLİKLER -->
-  <section id="features" class="features">
+  <!-- Özellikler -->
+  <section id="features" class="section">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Neden LocalWeb.ios?</h2>
-        <p>Sadece web sitesi yapmıyoruz; işletmenizin dijital vitrinini sanata dönüştürüyoruz.</p>
+      <div class="section-header">
+        <h2>Sıradanlığa Yer Yok.</h2>
+        <p>Bir web sitesi sadece görsel değil, bir müşteri kazanma aracıdır.</p>
       </div>
-      <div class="bento-grid">
-        <div class="bento-card wide reveal">
-          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
-          <h3>Mükemmel Mobil Deneyim</h3>
-          <p>Müşterilerinizin %80'i sizi telefonundan bulacak. Web siteniz her ekranda (telefon, tablet, bilgisayar) kusursuz görünmek üzere tasarlanır.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+          <h3>Mobil Öncelikli</h3>
+          <p>Müşterilerinizin %80'i telefondan gelecek. Siteniz her ekranda kusursuz çalışır.</p>
         </div>
-        <div class="bento-card reveal">
-          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <h3>Işık Hızında</h3>
-          <p>Google'ın sevdiği hız. 1 saniyeden kısa yüklenme süresi ile ziyaretçilerinizi bekletmeyin.</p>
+          <p>Google'ın aradığı hız standartlarında, 1 saniyenin altında açılan sayfalar.</p>
         </div>
-        <div class="bento-card reveal">
-          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>SEO Altyapısı</h3>
-          <p>Arama motorlarında üst sıralarda çıkmak için gereken tüm teknik altyapı ve optimizasyon hazır.</p>
-        </div>
-        <div class="bento-card wide reveal">
-          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>7/24 Kesintisiz Destek</h3>
-          <p>Site yayına girdikten sonra yalnız değilsiniz. Herhangi bir sorunda, güncellemede veya yeni bir fikirde tek bir Instagram DM'i ile yanınızdayız.</p>
-        </div>
-        <div class="bento-card reveal">
-          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <h3>Çoklu Dil Desteği</h3>
-          <p>İşletmenizi globalleştirin. İhtiyacınıza göre İngilizce veya diğer dillerde site yapısı.</p>
+        <div class="card">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Kusursuz SEO</h3>
+          <p>Arama motorlarında üst sıralarda çıkmak için gereken tüm teknik altyapı hazır.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TEKLİF SİHİRBAZI -->
-  <section id="calculator" class="calculator">
+  <!-- Portfolyo -->
+  <section id="portfolio" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Projenizi Tasarlayın</h2>
-        <p>İhtiyaçlarınızı seçin, tahmini süreyi anında görün ve size özel teklif mesajını kopyalayın.</p>
+      <div class="section-header">
+        <h2>Örnek Çalışmalar</h2>
+        <p>Sektörünüze ilham verecek tasarımlar.</p>
+      </div>
+      <div class="port-grid" id="portGrid"></div>
+    </div>
+  </section>
+
+  <!-- Teklif Hesaplayıcı (Fiyat Odaklı Değil) -->
+  <section id="calculator" class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Projenizi Planlayın</h2>
+        <p>İhtiyaçlarınızı seçin. Size özel hazırladığımız teklifi almak için Instagram'a yönlendirileceksiniz.</p>
       </div>
       
-      <div class="calc-wrapper reveal">
-        <div class="calc-form">
-          <div class="calc-section">
-            <h4>1. İşletme Türü</h4>
-            <div class="calc-options" id="typeOpts">
-              <label class="calc-opt selected"><input type="radio" name="btype" value="Kafe/Restoran" checked onchange="updateCalc()"> ☕ Kafe / Restoran</label>
-              <label class="calc-opt"><input type="radio" name="btype" value="Klinik/Sağlık" onchange="updateCalc()"> 🩺 Klinik / Sağlık</label>
-              <label class="calc-opt"><input type="radio" name="btype" value="Güzellik/Kuaför" onchange="updateCalc()"> 💇‍♀️ Güzellik / Kuaför</label>
-              <label class="calc-opt"><input type="radio" name="btype" value="Butik/E-Ticaret" onchange="updateCalc()"> 🛍️ Butik / Mağaza</label>
-              <label class="calc-opt"><input type="radio" name="btype" value="Kurumsal/Hizmet" onchange="updateCalc()"> 💼 Kurumsal / Hizmet</label>
-            </div>
-          </div>
-
-          <div class="calc-section">
-            <h4>2. Sayfa Sayısı</h4>
-            <div class="calc-options" id="pageOpts">
-              <label class="calc-opt selected"><input type="radio" name="pages" value="Tek Sayfa (Landing Page)" checked onchange="updateCalc()"> Tek Sayfa</label>
-              <label class="calc-opt"><input type="radio" name="pages" value="3-5 Sayfa" onchange="updateCalc()"> 3-5 Sayfa</label>
-              <label class="calc-opt"><input type="radio" name="pages" value="Sınırsız Sayfa" onchange="updateCalc()"> Sınırsız</label>
-            </div>
-          </div>
-
-          <div class="calc-section">
-            <h4>3. İhtiyaç Duyduğunuz Ekstralar</h4>
-            <div class="calc-options" id="addonOpts">
-              <label class="calc-opt"><input type="checkbox" value="Online Randevu Sistemi" onchange="updateCalc()"> 📅 Randevu Sistemi</label>
-              <label class="calc-opt"><input type="checkbox" value="WhatsApp Entegrasyonu" onchange="updateCalc()"> 💬 WhatsApp Butonu</label>
-              <label class="calc-opt"><input type="checkbox" value="Menü / Ürün Kataloğu" onchange="updateCalc()"> 📖 Menü / Katalog</label>
-              <label class="calc-opt"><input type="checkbox" value="Çoklu Dil Desteği" onchange="updateCalc()"> 🌍 Çoklu Dil</label>
-            </div>
+      <div class="calc-container">
+        <div class="calc-step">
+          <label>1. İşletme Türü</label>
+          <div class="calc-options" id="typeOpts">
+            <label class="calc-opt selected"><input type="radio" name="btype" value="Kafe/Restoran" checked onchange="updateCalc()"> Kafe / Restoran</label>
+            <label class="calc-opt"><input type="radio" name="btype" value="Klinik/Sağlık" onchange="updateCalc()"> Klinik / Sağlık</label>
+            <label class="calc-opt"><input type="radio" name="btype" value="Güzellik/Kuaför" onchange="updateCalc()"> Güzellik / Kuaför</label>
+            <label class="calc-opt"><input type="radio" name="btype" value="Butik/Mağaza" onchange="updateCalc()"> Butik / Mağaza</label>
+            <label class="calc-opt"><input type="radio" name="btype" value="Kurumsal" onchange="updateCalc()"> Kurumsal</label>
           </div>
         </div>
 
-        <div class="calc-summary">
-          <h4 style="color:var(--text-muted); font-size:14px; text-transform:uppercase; margin-bottom:8px;">Tahmini Teslim Süresi</h4>
-          <div class="calc-time" id="calcTime">5 İş Günü</div>
-          <div class="calc-desc" id="calcDesc">Seçmiş olduğunuz standart özelliklerle projeniz yaklaşık 1 hafta içinde tamamlanacaktır.</div>
-          
-          <button class="btn btn-gradient" onclick="sendQuote()" style="width: 100%; padding: 18px; font-size: 16px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            Bu Seçimlerle Teklif Al
+        <div class="calc-step">
+          <label>2. Sayfa Sayısı</label>
+          <div class="calc-options" id="pageOpts">
+            <label class="calc-opt selected"><input type="radio" name="pages" value="Tek Sayfa" checked onchange="updateCalc()"> Tek Sayfa</label>
+            <label class="calc-opt"><input type="radio" name="pages" value="3-5 Sayfa" onchange="updateCalc()"> 3-5 Sayfa</label>
+            <label class="calc-opt"><input type="radio" name="pages" value="Sınırsız" onchange="updateCalc()"> Sınırsız</label>
+          </div>
+        </div>
+
+        <div class="calc-step">
+          <label>3. Ekstra İhtiyaçlar</label>
+          <div class="calc-options" id="addonOpts">
+            <label class="calc-opt"><input type="checkbox" value="Online Randevu" onchange="updateCalc()"> Online Randevu</label>
+            <label class="calc-opt"><input type="checkbox" value="WhatsApp Entegrasyonu" onchange="updateCalc()"> WhatsApp Butonu</label>
+            <label class="calc-opt"><input type="checkbox" value="Menü/Katalog" onchange="updateCalc()"> Menü / Katalog</label>
+            <label class="calc-opt"><input type="checkbox" value="Çoklu Dil" onchange="updateCalc()"> Çoklu Dil</label>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <h4>Tahmini Teslim Süresi</h4>
+          <div class="time" id="calcTime">5 İş Günü</div>
+          <button class="btn btn-accent" onclick="sendQuote()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            Bu Seçimlerle Instagram'dan Teklif Al
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLYO -->
-  <section id="portfolio" class="portfolio">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Sektörüne İlham Veren Tasarımlar</h2>
-        <p>Kendi işletmen için nasıl bir site istediğini keşfet. Tıkla, canlı önizlemeyi incele.</p>
-      </div>
-      <div class="port-grid" id="portGrid"></div>
-    </div>
-  </section>
-
-  <!-- FİYATLANDIRMA -->
-  <section id="pricing" class="pricing">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>İşletmenize Uygun Paket Seçin</h2>
-        <p>Gizli ücret yok. Her bütçeye uygun, şeffaf fiyatlandırma.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="price-card reveal">
-          <div class="price-name">Başlangıç</div>
-          <div class="price-amount">₺2.499<small>'dan</small></div>
-          <p>Yeni başlayan işletmeler için ideal başlangıç paketi.</p>
-          <ul class="price-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Tek Sayfa Tasarım</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobil Uyumlu</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Ücretsiz Domain & Hosting</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1 Tur Revizyon</li>
-          </ul>
-          <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">Hemen Başla</a>
-        </div>
-        <div class="price-card hot reveal">
-          <div class="price-tag">EN POPÜLER</div>
-          <div class="price-name">Profesyonel</div>
-          <div class="price-amount">₺4.999<small>'dan</small></div>
-          <p>Ciddi müşteri çekmek isteyen işletmeler için.</p>
-          <ul class="price-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3-5 Sayfa Tasarım</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Gelişmiş SEO Ayarları</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Blog / Galeri Bölümü</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3 Tur Revizyon</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 3 Ay Destek</li>
-          </ul>
-          <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient" style="width: 100%;">Hemen Başla</a>
-        </div>
-        <div class="price-card reveal">
-          <div class="price-name">Kurumsal</div>
-          <div class="price-amount">Teklif<small> Alın</small></div>
-          <p>Sınırsız ihtiyaçları olan büyük ölçekli işletmeler için.</p>
-          <ul class="price-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Sınırsız Sayfa</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> E-Ticaret / Özel Yazılım</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Özel Animasyonlar</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Sınırsız Revizyon</li>
-          </ul>
-          <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">Teklif Al</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SÜREÇ -->
-  <section class="process">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Nasıl Çalışıyoruz?</h2>
-        <p>Karmaşık süreçler yok. Instagram'dan mesaj at, gerisini bize bırak.</p>
-      </div>
-      <div class="timeline">
-        <div class="step reveal">
-          <div class="step-num">1</div>
-          <h4>DM At & Tanışalım</h4>
-          <p>Instagram üzerinden işletmeni anlat. Sektörüne ve bütçene en uygun çözümü belirleyelim.</p>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">2</div>
-          <h4>Tasarım & Onay</h4>
-          <p>Sana özel hazırladığımız tasarımı sunalım. İstediğin gibi olana kadar revize edelim.</p>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">3</div>
-          <h4>Test & Yayın</h4>
-          <p>Sitenin hızını, mobil uyumunu ve SEO ayarlarını test edelim. Her şey kusursuzsa yayına alalım.</p>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">4</div>
-          <h4>Canlıya Alalım</h4>
-          <p>Onayının ardından siteni yayına alalım. Müşterilerin seni bulmaya başlasın!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- YORUMLAR -->
-  <section class="testimonials">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Müşterilerimiz Ne Diyor?</h2>
-      </div>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <div class="testi-stars">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="testi-text">"Kafemizin web sitesi için çok profesyonel bir iş çıkardılar. Müşterilerimizden çok güzel geri dönüşler alıyoruz. Süreç boyunca çok ilgiliydiler."</p>
-          <div class="testi-user">
-            <div class="testi-avatar">A</div>
-            <div class="testi-info">
-              <h4>Ayşe K.</h4>
-              <p>Kafe Sahibi</p>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="testi-text">"Klinik için hazırlanan online randevu sistemi işlerimizi çok kolaylaştırdı. Hızlı teslimat ve kaliteli tasarım için teşekkürler."</p>
-          <div class="testi-user">
-            <div class="testi-avatar">M</div>
-            <div class="testi-info">
-              <h4>Dr. Mehmet Y.</h4>
-              <p>Klinik Yöneticisi</p>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="testi-text">"Bütçeme en uygun paketi seçmeme yardımcı oldular. Sitemin mobil görünümü ve hızı gerçekten harika. Kesinlikle tavsiye ederim."</p>
-          <div class="testi-user">
-            <div class="testi-avatar">S</div>
-            <div class="testi-info">
-              <h4>Selin T.</h4>
-              <p>Butik Mağaza Sahibi</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- SSS -->
-  <section id="faq" class="faq-section">
+  <section id="faq" class="section" style="background: var(--surface); border-top: 1px solid var(--border);">
     <div class="wrap">
-      <div class="section-head reveal"><h2>Sıkça Sorulan Sorular</h2></div>
-      <div class="faq-list reveal">
+      <div class="section-header"><h2>Sıkça Sorulan Sorular</h2></div>
+      <div class="faq-list">
         <details>
-          <summary>Teslim süresi ne kadar? <span class="faq-icon">+</span></summary>
-          <div class="faq-content">Seçtiğiniz pakete ve sayfa sayısına göre değişmekle birlikte, ortalama 3 ila 10 iş günü arasında siteniz yayına hazır olur. Acil ihtiyaçlarınız için hızlandırılmış teslimat seçeneklerimiz mevcuttur.</div>
+          <summary>Teslim süresi ne kadar? <span>+</span></summary>
+          <div class="faq-content">Seçtiğiniz pakete göre ortalama 3 ila 10 iş günü arasında siteniz yayına hazır olur.</div>
         </details>
         <details>
-          <summary>Alan adı ve hosting dahil mi? <span class="faq-icon">+</span></summary>
-          <div class="faq-content">Evet, tüm paketlerimizin ilk yılı için .com uzantılı alan adı ve hızlı sunucu (hosting) hizmeti tamamen ücretsizdir. Sonraki yıllar için cüzi bir yenileme bedeli ödersiniz.</div>
+          <summary>Alan adı ve hosting dahil mi? <span>+</span></summary>
+          <div class="faq-content">İlk yıl için .com alan adı ve hızlı hosting hizmeti tamamen ücretsizdir.</div>
         </details>
         <details>
-          <summary>Siteyi kendim güncelleyebilir miyim? <span class="faq-icon">+</span></summary>
-          <div class="faq-content">Küçük metin ve fotoğraf değişikliklerini bizimle iletişime geçerek yapabilirsiniz. Daha kapsamlı güncellemeler için size özel bir yönetim paneli sunuyoruz veya teknik destek paketimizden faydalanabilirsiniz.</div>
-        </details>
-        <details>
-          <summary>Ödeme nasıl yapılıyor? <span class="faq-icon">+</span></summary>
-          <div class="faq-content">Projeye başlarken %50 ön ödeme, teslimat ve onay sonrasında ise %50 kalan bakiye şeklinde ödeme yapabilirsiniz. Havale/EFT veya kredi kartı ile ödeme kabul ediyoruz.</div>
-        </details>
-        <details>
-          <summary>Sektörüm listede yok, yine de yapabilir misiniz? <span class="faq-icon">+</span></summary>
-          <div class="faq-content">Fark etmez. Emlakçıdan veteriner kliniğine, eğitim kurumundan yerel üreticiye kadar her sektöre özel tasarım yapıyoruz. İşletmeni anlat, sana özel çözüm sunalım.</div>
+          <summary>Fiyatlandırma nasıl yapılıyor? <span>+</span></summary>
+          <div class="faq-content">Her proje kendine özeldir. İhtiyaçlarınıza göre (sayfa sayısı, entegrasyonlar vb.) size en uygun bütçeyi Instagram üzerinden sunuyoruz.</div>
         </details>
       </div>
     </div>
   </section>
 </main>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="brand"><div class="brand-icon">L</div> LocalWeb.ios</a>
-        <p>Yerel işletmelerin dijital dünyada güçlü bir varlık göstermesi için modern, hızlı ve SEO uyumlu web siteleri tasarlıyoruz.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Hızlı Menü</h4>
-        <ul>
-          <li><a href="#features">Neden Biz?</a></li>
-          <li><a href="#calculator">Teklif Al</a></li>
-          <li><a href="#portfolio">Portfolyo</a></li>
-          <li><a href="#pricing">Paketler</a></li>
-          <li><a href="#faq">SSS</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>İletişim</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer">Instagram: @localweb.ios</a></li>
-          <li><a href="#" onclick="copyToClipboard('Merhaba, işletmem için teklif almak istiyorum.', 'Mesaj Kopyalandı!'); return false;">Hazır Mesajı Kopyala</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> LocalWeb.ios. Tüm hakları saklıdır.</p>
-      <p>Made with ♥ in Türkiye</p>
-    </div>
+  <div class="wrap footer-content">
+    <a href="#" class="brand" style="font-size: 16px;"><div class="brand-icon" style="width:24px;height:24px;font-size:12px;">L</div> LocalWeb.ios</a>
+    <p>© <span id="year"></span> LocalWeb.ios. Tüm hakları saklıdır.</p>
+    <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight:500; color:var(--text);">@localweb.ios</a>
   </div>
 </footer>
 
 <!-- Mobil Sabit Buton -->
 <div class="mobile-sticky">
-  <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-gradient">
+  <a href="https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
     Instagram'dan Hemen Yaz
   </a>
 </div>
 
-<!-- MODAL -->
+<!-- Modal -->
 <div class="modal" id="portfolioModal" onclick="if(event.target===this)closeModal()">
-  <div class="modal-content">
-    <div class="modal-header">
-      <div style="font-weight:600; font-size:16px;" id="modalTitle">Önizleme</div>
-      <div class="modal-controls">
-        <button class="dev-btn active" id="btnDesktop" onclick="setModalDevice('desktop')">🖥️ Masaüstü</button>
-        <button class="dev-btn" id="btnMobile" onclick="setModalDevice('mobile')">📱 Mobil</button>
-      </div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div style="font-weight:600; font-size:14px;" id="modalTitle">Önizleme</div>
+      <button class="btn btn-outline" style="padding:6px 12px; font-size:12px;" onclick="closeModal()">Kapat ✕</button>
     </div>
     <div class="modal-body">
-      <div class="iframe-wrapper" id="modalIframeWrap">
-        <iframe id="modalIframe" sandbox="allow-same-origin"></iframe>
-      </div>
+      <iframe id="modalIframe" sandbox="allow-same-origin" style="width:100%;height:100%;border:none;"></iframe>
     </div>
   </div>
 </div>
 
-<!-- TOAST -->
-<div id="toast">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-  <span id="toastMsg">Kopyalandı</span>
-</div>
+<!-- Toast -->
+<div id="toast">Kopyalandı</div>
 
 <script>
 "use strict";
-
 const IG_URL = 'https://www.instagram.com/localweb.ios?knvt=aGFmYWY1bWplMTFy';
 
-// --- 1. İMLEÇ IŞIĞI (CURSOR GLOW) ---
-const cursorGlow = document.getElementById('cursor-glow');
-document.addEventListener('mousemove', (e) => {
-  cursorGlow.style.left = e.clientX + 'px';
-  cursorGlow.style.top = e.clientY + 'px';
-  if (cursorGlow.style.opacity === '0' || !cursorGlow.style.opacity) cursorGlow.style.opacity = '1';
-});
-document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
-
-// --- 2. TEMA ---
+// --- Tema ---
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 const sunIcon = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
@@ -878,12 +519,11 @@ function setTheme(theme) {
   themeIcon.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
 }
 themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  setTheme(current === 'dark' ? 'light' : 'dark');
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
 setTheme(localStorage.getItem('lw-theme') || 'dark');
 
-// --- 3. MOBİL MENÜ ---
+// --- Mobil Menü ---
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
@@ -895,11 +535,11 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-// --- 4. TOAST & KOPYALAMA ---
+// --- Toast & Kopyalama ---
 let toastTimer;
 function showToast(msg) {
   const toast = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
+  toast.textContent = msg;
   toast.classList.add('on');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove('on'), 2500);
@@ -916,64 +556,13 @@ function fallbackCopy(text, successMsg) {
   showToast(successMsg);
 }
 
-// --- 5. SCROLL REVEAL (ANİMASYONLAR) ---
-const revealElements = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('on');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-revealElements.forEach(el => revealObserver.observe(el));
-
-// --- 6. 3D TILT EFEKTİ (PORTFOLYO) ---
-function applyTilt() {
-  const cards = document.querySelectorAll('.port-card');
-  cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -5;
-      const rotateY = ((x - centerX) / centerX) * 5;
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
-    });
-  });
-}
-
-// --- 7. İNTERAKTİF ÖNİZLEME ŞABLONLARI (6 SEKTÖR) ---
+// --- Portfolyo ---
 const templates = {
-  kafe: {
-    url: 'kafekiyi.localweb.ios',
-    html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#faf7f2;color:#3e2723;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #eee;font-size:12px;} .hero{padding:40px 20px;text-align:center;background:#3e2723;color:#faf7f2;} .hero h1{margin:0 0 10px;font-size:24px;font-family:serif;} .btn{display:inline-block;background:#d7ccc8;color:#3e2723;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:20px;} .card{background:#fff;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,0.05);} .card h3{font-size:14px;margin:0 0 5px;} .card p{font-size:11px;color:#666;}</style></head><body><div class="nav"><b>Kafe Kıyı</b><span>Menü | Hakkımızda | İletişim</span></div><div class="hero"><h1>Sıcacık Bir Mola</h1><p>Taze kahveler ve ev yapımı lezzetler.</p><a href="#" class="btn">Menüyü Gör</a></div><div class="grid"><div class="card"><h3>Filtre Kahve</h3><p>₺75</p></div><div class="card"><h3>Cheesecake</h3><p>₺95</p></div></div></body></html>`
-  },
-  klinik: {
-    url: 'klinikplus.localweb.ios',
-    html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f0f9ff;color:#0f172a;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e0f2fe;font-size:12px;color:#0284c7;} .hero{padding:40px 20px;text-align:center;background:#0284c7;color:#fff;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#fff;color:#0284c7;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .list{padding:20px;display:flex;flex-direction:column;gap:10px;} .item{background:#fff;padding:15px;border-radius:8px;border-left:4px solid #0284c7;font-size:13px;display:flex;justify-content:space-between;}</style></head><body><div class="nav"><b>Klinik Plus</b><span>Hizmetler | Doktorlar | Randevu</span></div><div class="hero"><h1>Sağlığınız İçin Buradayız</h1><p>Modern teknoloji ve uzman kadromuzla hizmetinizdeyiz.</p><a href="#" class="btn">Online Randevu Al</a></div><div class="list"><div class="item"><b>Ağız ve Diş Sağlığı</b><span>İncele →</span></div><div class="item"><b>Estetik Diş Hekimliği</b><span>İncele →</span></div></div></body></html>`
-  },
-  guzellik: {
-    url: 'lumiabeauty.localweb.ios',
-    html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#fdf4f8;color:#4c0519;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #fce7f3;font-size:12px;color:#be185d;} .hero{padding:40px 20px;text-align:center;background:linear-gradient(135deg,#fce7f3,#fbcfe1);color:#4c0519;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#be185d;color:#fff;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .services{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px;} .srv{background:#fff;border-radius:8px;padding:15px;text-align:center;font-size:13px;border:1px solid #fbcfe1;}</style></head><body><div class="nav"><b>Lumia Beauty</b><span>Hizmetler | Galeri | Randevu</span></div><div class="hero"><h1>Kendinizi Özel Hissedin</h1><p>Saç, cilt ve tırnak bakımında uzman ekibimizle yenilenin.</p><a href="#" class="btn">Randevu Al</a></div><div class="services"><div class="srv"><b>Saç Kesim</b><br>₺450</div><div class="srv"><b>Cilt Bakımı</b><br>₺650</div><div class="srv"><b>Manikür</b><br>₺350</div><div class="srv"><b>Makyaj</b><br>₺500</div></div></body></html>`
-  },
-  hukuk: {
-    url: 'demirhukuk.localweb.ios',
-    html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f8fafc;color:#0f172a;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e2e8f0;font-size:12px;color:#1e3a8a;} .hero{padding:50px 20px;text-align:center;background:#1e3a8a;color:#f8fafc;} .hero h1{margin:0 0 10px;font-size:24px;font-family:serif;} .btn{display:inline-block;background:#f8fafc;color:#1e3a8a;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .areas{padding:20px;display:flex;gap:10px;} .area{flex:1;background:#fff;padding:15px;border-radius:8px;border-top:3px solid #1e3a8a;text-align:center;font-size:13px;}</style></head><body><div class="nav"><b>Demir Hukuk</b><span>Alanlarımız | Ekibimiz | İletişim</span></div><div class="hero"><h1>Haklarınızı Güvenle Savunun</h1><p>20 yılı aşkın tecrübe ve sonuç odaklı yaklaşım.</p><a href="#" class="btn">Ücretsiz Ön Görüşme</a></div><div class="areas"><div class="area"><b>Ticaret Hukuku</b></div><div class="area"><b>Aile Hukuku</b></div><div class="area"><b>İş Hukuku</b></div></div></body></html>`
-  },
-  butik: {
-    url: 'atelierbutik.localweb.ios',
-    html: `<!DOCTYPE html><html><head><style>body{font-family:serif;margin:0;background:#faf9f6;color:#2d2d2d;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e5e5e5;font-size:12px;font-family:system-ui;color:#7f1d1d;} .hero{padding:40px 20px;text-align:center;background:#f0e6d6;} .hero h1{margin:0 0 10px;font-size:26px;color:#7f1d1d;} .btn{display:inline-block;background:#7f1d1d;color:#fff;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;font-family:system-ui;text-decoration:none;} .prods{padding:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;} .prod{background:#fff;padding:10px;text-align:center;border:1px solid #eee;font-size:11px;} .img-ph{aspect-ratio:1;background:#e5e5e5;margin-bottom:8px;border-radius:4px;}</style></head><body><div class="nav"><b>Atelier Butik</b><span>Koleksiyon | Hakkımızda</span></div><div class="hero"><h1>Zamansız Zarafet</h1><p>El yapımı deri ve tekstil ürünlerinde yeni sezon.</p><a href="#" class="btn">Koleksiyonu Keşfet</a></div><div class="prods"><div class="prod"><div class="img-ph"></div>Çanta<br><b>₺2.890</b></div><div class="prod"><div class="img-ph"></div>Kolye<br><b>₺890</b></div><div class="prod"><div class="img-ph"></div>Şal<br><b>₺1.490</b></div></div></body></html>`
-  },
-  emlak: {
-    url: 'prestijemlak.localweb.ios',
-    html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f8fafc;color:#1e293b;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e2e8f0;font-size:12px;color:#0f766e;} .hero{padding:40px 20px;text-align:center;background:#0f766e;color:#fff;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#fff;color:#0f766e;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .grid{padding:20px;display:flex;flex-direction:column;gap:10px;} .house{background:#fff;padding:15px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #e2e8f0;font-size:13px;}</style></head><body><div class="nav"><b>Prestij Emlak</b><span>İlanlar | Hakkımızda | İletişim</span></div><div class="hero"><h1>Hayalinizdeki Eve Kavuşun</h1><p>Size en uygun konut ve ticari gayrimenkul seçenekleri.</p><a href="#" class="btn">İlanları İncele</a></div><div class="grid"><div class="house"><b>3+1 Daire, Kadıköy</b><span>₺5.200.000</span></div><div class="house"><b>2+1 Rezidans, Beşiktaş</b><span>₺3.800.000</span></div></div></body></html>`
-  }
+  kafe: { url: 'kafekiyi.localweb.ios', html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#faf7f2;color:#3e2723;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #eee;font-size:12px;} .hero{padding:40px 20px;text-align:center;background:#3e2723;color:#faf7f2;} .hero h1{margin:0 0 10px;font-size:24px;font-family:serif;} .btn{display:inline-block;background:#d7ccc8;color:#3e2723;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:20px;} .card{background:#fff;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,0.05);} .card h3{font-size:14px;margin:0 0 5px;} .card p{font-size:11px;color:#666;}</style></head><body><div class="nav"><b>Kafe Kıyı</b><span>Menü | Hakkımızda | İletişim</span></div><div class="hero"><h1>Sıcacık Bir Mola</h1><p>Taze kahveler ve ev yapımı lezzetler.</p><a href="#" class="btn">Menüyü Gör</a></div><div class="grid"><div class="card"><h3>Filtre Kahve</h3><p>₺75</p></div><div class="card"><h3>Cheesecake</h3><p>₺95</p></div></div></body></html>` },
+  klinik: { url: 'klinikplus.localweb.ios', html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f0f9ff;color:#0f172a;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e0f2fe;font-size:12px;color:#0284c7;} .hero{padding:40px 20px;text-align:center;background:#0284c7;color:#fff;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#fff;color:#0284c7;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .list{padding:20px;display:flex;flex-direction:column;gap:10px;} .item{background:#fff;padding:15px;border-radius:8px;border-left:4px solid #0284c7;font-size:13px;display:flex;justify-content:space-between;}</style></head><body><div class="nav"><b>Klinik Plus</b><span>Hizmetler | Doktorlar | Randevu</span></div><div class="hero"><h1>Sağlığınız İçin Buradayız</h1><p>Modern teknoloji ve uzman kadromuzla hizmetinizdeyiz.</p><a href="#" class="btn">Online Randevu Al</a></div><div class="list"><div class="item"><b>Ağız ve Diş Sağlığı</b><span>İncele →</span></div><div class="item"><b>Estetik Diş Hekimliği</b><span>İncele →</span></div></div></body></html>` },
+  guzellik: { url: 'lumiabeauty.localweb.ios', html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#fdf4f8;color:#4c0519;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #fce7f3;font-size:12px;color:#be185d;} .hero{padding:40px 20px;text-align:center;background:linear-gradient(135deg,#fce7f3,#fbcfe1);color:#4c0519;} .hero h1{margin:0 0 10px;font-size:22px;} .btn{display:inline-block;background:#be185d;color:#fff;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .services{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px;} .srv{background:#fff;border-radius:8px;padding:15px;text-align:center;font-size:13px;border:1px solid #fbcfe1;}</style></head><body><div class="nav"><b>Lumia Beauty</b><span>Hizmetler | Galeri | Randevu</span></div><div class="hero"><h1>Kendinizi Özel Hissedin</h1><p>Saç, cilt ve tırnak bakımında uzman ekibimizle yenilenin.</p><a href="#" class="btn">Randevu Al</a></div><div class="services"><div class="srv"><b>Saç Kesim</b><br>₺450</div><div class="srv"><b>Cilt Bakımı</b><br>₺650</div><div class="srv"><b>Manikür</b><br>₺350</div><div class="srv"><b>Makyaj</b><br>₺500</div></div></body></html>` },
+  hukuk: { url: 'demirhukuk.localweb.ios', html: `<!DOCTYPE html><html><head><style>body{font-family:system-ui;margin:0;background:#f8fafc;color:#0f172a;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e2e8f0;font-size:12px;color:#1e3a8a;} .hero{padding:50px 20px;text-align:center;background:#1e3a8a;color:#f8fafc;} .hero h1{margin:0 0 10px;font-size:24px;font-family:serif;} .btn{display:inline-block;background:#f8fafc;color:#1e3a8a;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;text-decoration:none;} .areas{padding:20px;display:flex;gap:10px;} .area{flex:1;background:#fff;padding:15px;border-radius:8px;border-top:3px solid #1e3a8a;text-align:center;font-size:13px;}</style></head><body><div class="nav"><b>Demir Hukuk</b><span>Alanlarımız | Ekibimiz | İletişim</span></div><div class="hero"><h1>Haklarınızı Güvenle Savunun</h1><p>20 yılı aşkın tecrübe ve sonuç odaklı yaklaşım.</p><a href="#" class="btn">Ücretsiz Ön Görüşme</a></div><div class="areas"><div class="area"><b>Ticaret Hukuku</b></div><div class="area"><b>Aile Hukuku</b></div><div class="area"><b>İş Hukuku</b></div></div></body></html>` },
+  butik: { url: 'atelierbutik.localweb.ios', html: `<!DOCTYPE html><html><head><style>body{font-family:serif;margin:0;background:#faf9f6;color:#2d2d2d;} .nav{padding:15px 20px;display:flex;justify-content:space-between;border-bottom:1px solid #e5e5e5;font-size:12px;font-family:system-ui;color:#7f1d1d;} .hero{padding:40px 20px;text-align:center;background:#f0e6d6;} .hero h1{margin:0 0 10px;font-size:26px;color:#7f1d1d;} .btn{display:inline-block;background:#7f1d1d;color:#fff;padding:8px 16px;border-radius:5px;font-weight:bold;margin-top:15px;font-size:12px;font-family:system-ui;text-decoration:none;} .prods{padding:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;} .prod{background:#fff;padding:10px;text-align:center;border:1px solid #eee;font-size:11px;} .img-ph{aspect-ratio:1;background:#e5e5e5;margin-bottom:8px;border-radius:4px;}</style></head><body><div class="nav"><b>Atelier Butik</b><span>Koleksiyon | Hakkımızda</span></div><div class="hero"><h1>Zamansız Zarafet</h1><p>El yapımı deri ve tekstil ürünlerinde yeni sezon.</p><a href="#" class="btn">Koleksiyonu Keşfet</a></div><div class="prods"><div class="prod"><div class="img-ph"></div>Çanta<br><b>₺2.890</b></div><div class="prod"><div class="img-ph"></div>Kolye<br><b>₺890</b></div><div class="prod"><div class="img-ph"></div>Şal<br><b>₺1.490</b></div></div></body></html>` }
 };
 
 const previewIframe = document.getElementById('previewIframe');
@@ -982,103 +571,47 @@ const previewUrl = document.getElementById('previewUrl');
 function switchTab(type, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  previewUrl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ${templates[type].url}`;
+  previewUrl.innerHTML = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline; margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ${templates[type].url}`;
   previewIframe.srcdoc = templates[type].html;
 }
 previewIframe.srcdoc = templates.kafe.html;
 
-// --- 8. TEKLİF HESAPLAYICI ---
-function updateCalc() {
-  ['typeOpts', 'pageOpts'].forEach(id => {
-    const opts = document.getElementById(id).querySelectorAll('.calc-opt');
-    opts.forEach(opt => opt.classList.toggle('selected', opt.querySelector('input').checked));
-  });
-  const addonOpts = document.getElementById('addonOpts').querySelectorAll('.calc-opt');
-  addonOpts.forEach(opt => opt.classList.toggle('selected', opt.querySelector('input').checked));
-
-  let days = 3;
-  const pages = document.querySelector('input[name="pages"]:checked').value;
-  if (pages.includes('3-5')) days += 2;
-  if (pages.includes('Sınırsız')) days += 5;
-
-  const addons = Array.from(document.querySelectorAll('#addonOpts input:checked'));
-  days += addons.length;
-
-  const timeEl = document.getElementById('calcTime');
-  const descEl = document.getElementById('calcDesc');
-  
-  timeEl.style.opacity = 0;
-  setTimeout(() => {
-    timeEl.textContent = `${days} İş Günü`;
-    descEl.textContent = `Seçmiş olduğunuz ${addons.length > 0 ? addons.length + ' ekstra özellik ve ' : ''}${pages} ile projeniz yaklaşık ${days} iş günü içinde tamamlanacaktır.`;
-    timeEl.style.opacity = 1;
-  }, 150);
-}
-
-function sendQuote() {
-  const type = document.querySelector('input[name="btype"]:checked').value;
-  const pages = document.querySelector('input[name="pages"]:checked').value;
-  const addons = Array.from(document.querySelectorAll('#addonOpts input:checked')).map(i => i.value);
-  const time = document.getElementById('calcTime').textContent;
-
-  let msg = `Merhaba LocalWeb.ios, işletmem için web sitesi yaptırmak istiyorum.\n\n`;
-  msg += `İşletme Türü: ${type}\n`;
-  msg += `Sayfa Sayısı: ${pages}\n`;
-  if (addons.length > 0) msg += `Ekstra İhtiyaçlar: ${addons.join(', ')}\n`;
-  msg += `Tahmini Süre: ${time}\n\n`;
-  msg += `Bu özelliklerle ilgili detaylı bilgi ve fiyat teklifi alabilir miyim?`;
-
-  copyToClipboard(msg, 'Teklif mesajı kopyalandı! Instagram açılıyor...');
-  setTimeout(() => { window.open(IG_URL, '_blank', 'noopener,noreferrer'); }, 800);
-}
-
-// --- 9. PORTFOLYO & MODAL ---
 const portfolioData = [
-  { id: 'kafe', tag: 'Kafe & Restoran', title: 'Kafe Kıyı', desc: 'Sıcak, samimi ve iştah açıcı tasarım.', color: '#3e2723' },
-  { id: 'klinik', tag: 'Sağlık & Klinik', title: 'Klinik Plus', desc: 'Güven veren, temiz ve profesyonel.', color: '#0284c7' },
-  { id: 'guzellik', tag: 'Güzellik & Bakım', title: 'Lumia Beauty', desc: 'Zarif, modern ve davetkar arayüz.', color: '#be185d' },
-  { id: 'hukuk', tag: 'Hukuk & Danışmanlık', title: 'Demir Hukuk', desc: 'Kurumsal, ciddi ve güvenilir.', color: '#1e3a8a' },
-  { id: 'butik', tag: 'Butik & E-Ticaret', title: 'Atelier Butik', desc: 'Şık, ürün odaklı ve hızlı.', color: '#7f1d1d' },
-  { id: 'emlak', tag: 'Emlak & Gayrimenkul', title: 'Prestij Emlak', desc: 'Güven veren, kurumsal ve şık.', color: '#0f766e' }
+  { id: 'kafe', title: 'Kafe Kıyı', desc: 'Sıcak ve davetkar tasarım.', color: '#3e2723' },
+  { id: 'klinik', title: 'Klinik Plus', desc: 'Güven veren kurumsal yapı.', color: '#0284c7' },
+  { id: 'guzellik', title: 'Lumia Beauty', desc: 'Zarif ve modern arayüz.', color: '#be185d' },
+  { id: 'hukuk', title: 'Demir Hukuk', desc: 'Ciddi ve profesyonel görünüm.', color: '#1e3a8a' },
+  { id: 'butik', title: 'Atelier Butik', desc: 'Ürün odaklı şık tasarım.', color: '#7f1d1d' }
 ];
 
-function renderPortfolio() {
-  const grid = document.getElementById('portGrid');
-  grid.innerHTML = portfolioData.map(p => `
-    <div class="port-card" onclick="openModal('${p.id}')">
-      <div class="port-img" style="background:${p.color}">
-        <div class="mockup-shape">
-          <div style="height:25%; background:rgba(0,0,0,0.2); border-bottom:1px solid rgba(255,255,255,0.2);"></div>
-          <div style="flex:1; padding:20px; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:center;">
-             <div style="width:70%; height:10px; background:rgba(255,255,255,0.8); border-radius:4px;"></div>
-             <div style="width:50%; height:6px; background:rgba(255,255,255,0.5); border-radius:4px;"></div>
-             <div style="width:40%; height:24px; background:rgba(255,255,255,0.9); border-radius:12px; margin-top:10px;"></div>
-          </div>
-        </div>
-        <div class="port-overlay">
-          <span>Canlı İncele <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+const portGrid = document.getElementById('portGrid');
+portGrid.innerHTML = portfolioData.map(p => `
+  <div class="port-card" onclick="openModal('${p.id}')">
+    <div class="port-img" style="background:${p.color}">
+      <div style="width:70%; height:60%; background:rgba(255,255,255,0.1); border-radius:8px; border:1px solid rgba(255,255,255,0.2); display:flex; flex-direction:column; overflow:hidden;">
+        <div style="height:20%; background:rgba(0,0,0,0.2); border-bottom:1px solid rgba(255,255,255,0.1);"></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;">
+          <div style="width:50%; height:6px; background:rgba(255,255,255,0.8); border-radius:4px;"></div>
+          <div style="width:30%; height:4px; background:rgba(255,255,255,0.5); border-radius:4px;"></div>
         </div>
       </div>
-      <div class="port-info">
-        <div class="port-tag">${p.tag}</div>
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
-      </div>
+      <div class="port-overlay"><span>İncele →</span></div>
     </div>
-  `).join('');
-  applyTilt();
-}
+    <div class="port-info">
+      <h4>${p.title}</h4>
+      <p>${p.desc}</p>
+    </div>
+  </div>
+`).join('');
 
 const modal = document.getElementById('portfolioModal');
 const modalIframe = document.getElementById('modalIframe');
-const modalIframeWrap = document.getElementById('modalIframeWrap');
 const modalTitle = document.getElementById('modalTitle');
 
 function openModal(id) {
   const data = portfolioData.find(p => p.id === id);
-  modalTitle.textContent = data.title + ' Önizlemesi';
+  modalTitle.textContent = data.title;
   modalIframe.srcdoc = templates[id].html;
-  setModalDevice('desktop');
   modal.classList.add('on');
   document.body.style.overflow = 'hidden';
 }
@@ -1087,30 +620,45 @@ function closeModal() {
   modalIframe.srcdoc = '';
   document.body.style.overflow = '';
 }
-function setModalDevice(device) {
-  const btnD = document.getElementById('btnDesktop');
-  const btnM = document.getElementById('btnMobile');
-  if (device === 'mobile') {
-    modalIframeWrap.classList.add('mobile');
-    btnM.classList.add('active');
-    btnD.classList.remove('active');
-  } else {
-    modalIframeWrap.classList.remove('mobile');
-    btnD.classList.add('active');
-    btnM.classList.remove('active');
-  }
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+// --- Teklif Hesaplayıcı ---
+function updateCalc() {
+  ['typeOpts', 'pageOpts', 'addonOpts'].forEach(id => {
+    document.getElementById(id).querySelectorAll('.calc-opt').forEach(opt => {
+      opt.classList.toggle('selected', opt.querySelector('input').checked);
+    });
+  });
+
+  let days = 3;
+  const pages = document.querySelector('input[name="pages"]:checked').value;
+  if (pages.includes('3-5')) days += 2;
+  if (pages.includes('Sınırsız')) days += 5;
+
+  const addons = document.querySelectorAll('#addonOpts input:checked').length;
+  days += addons;
+
+  document.getElementById('calcTime').textContent = `${days} İş Günü`;
 }
 
-// Başlat
-window.onload = () => {
-  updateCalc();
-  renderPortfolio();
-  document.getElementById('year').textContent = new Date().getFullYear();
-};
+function sendQuote() {
+  const type = document.querySelector('input[name="btype"]:checked').value;
+  const pages = document.querySelector('input[name="pages"]:checked').value;
+  const addons = Array.from(document.querySelectorAll('#addonOpts input:checked')).map(i => i.value);
+  const time = document.getElementById('calcTime').textContent;
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('on')) closeModal();
-});
+  let msg = `Merhaba LocalWeb.ios,\nİşletmem için web sitesi yaptırmak istiyorum.\n\n`;
+  msg += `İşletme Türü: ${type}\nSayfa Sayısı: ${pages}\n`;
+  if (addons.length > 0) msg += `Ekstralar: ${addons.join(', ')}\n`;
+  msg += `Tahmini Süre: ${time}\n\n`;
+  msg += `Bu özelliklerle ilgili fiyat teklifi alabilir miyim?`;
+
+  copyToClipboard(msg, 'Teklif mesajı kopyalandı! Instagram açılıyor...');
+  setTimeout(() => { window.open(IG_URL, '_blank', 'noopener,noreferrer'); }, 800);
+}
+
+updateCalc();
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
