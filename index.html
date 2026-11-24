@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08080d">
+<meta name="description" content="LocalWeb.ios — Kafe, restoran, kuaför, klinik, mağaza ve yerel işletmeler için modern, hızlı ve mobil uyumlu web siteleri. Anahtar teslim tasarım, yayın ve teknik destek.">
+<meta property="og:title" content="LocalWeb.ios — Yerel İşletmeler İçin Modern Web Siteleri">
+<meta property="og:description" content="İşletmeni dijitale taşı, müşterilerini artır. Instagram'dan yaz, siten birkaç gün içinde yayında.">
+<meta property="og:type" content="website">
+<title>LocalWeb.ios — Yerel İşletmeler İçin Modern Web Siteleri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%23c04bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='system-ui,sans-serif' font-size='34' font-weight='800' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#08080d; --bg-2:#0d0d15; --surface:#111118; --surface-2:#17171f;
+  --surface-3:#1d1d27; --border:#252535; --border-soft:#1a1a24;
+  --text:#f5f5fa; --text-soft:#a8a8b8; --muted:#6a6a7e;
+  --primary:#7c5cff; --primary-2:#c04bff; --accent:#00e5a0;
+  --success:#22c55e; --danger:#ef4444;
+  --grad:linear-gradient(135deg,#7c5cff 0%,#c04bff 100%);
+  --grad-soft:linear-gradient(135deg,rgba(124,92,252,.14),rgba(192,75,255,.06));
+  --grad-3:linear-gradient(135deg,#7c5cff 0%,#c04bff 55%,#ff4d9d 100%);
+  --radius:14px; --radius-lg:20px; --radius-xl:28px;
+  --shadow:0 20px 50px -20px rgba(0,0,0,.7);
+  --shadow-accent:0 12px 40px -12px rgba(124,92,252,.55);
+  --shadow-card:0 1px 0 rgba(255,255,255,.04) inset, 0 20px 50px -24px rgba(0,0,0,.6);
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --font-display:'Space Grotesk','Inter',sans-serif;
+  --nav-h:68px;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#fbfbfd; --bg-2:#f4f4f9; --surface:#ffffff; --surface-2:#f8f8fc;
+  --surface-3:#f0f0f6; --border:#e6e6ef; --border-soft:#eeeff6;
+  --text:#0a0a14; --text-soft:#4d4d63; --muted:#8a8a9e;
+  --shadow:0 20px 50px -24px rgba(30,30,60,.15);
+  --shadow-accent:0 12px 40px -14px rgba(124,92,252,.35);
+  --shadow-card:0 1px 0 rgba(0,0,0,.02) inset, 0 12px 40px -24px rgba(30,30,60,.14);
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 20px)}
+body{
+  font-family:var(--font); background:var(--bg); color:var(--text);
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden; min-height:100vh;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(800px 500px at 15% -10%, rgba(124,92,252,.15), transparent 60%),
+    radial-gradient(700px 500px at 85% 0%, rgba(192,75,255,.10), transparent 55%),
+    radial-gradient(600px 400px at 50% 100%, rgba(0,229,160,.05), transparent 60%);
+}
+[data-theme="light"] body::before{
+  background:
+    radial-gradient(800px 500px at 15% -10%, rgba(124,92,252,.10), transparent 60%),
+    radial-gradient(700px 500px at 85% 0%, rgba(192,75,255,.08), transparent 55%);
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+img,svg{display:block;max-width:100%}
+::selection{background:rgba(124,92,252,.3)}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.02em;line-height:1.15;font-weight:700}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;border:2px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+@media(max-width:640px){.wrap{padding:0 18px}}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.nav{
+  position:sticky;top:0;z-index:50; height:var(--nav-h);
+  display:flex;align-items:center;
+  backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, background .2s;
+}
+.nav.scrolled{border-bottom-color:var(--border)}
+.nav .wrap{display:flex;align-items:center;gap:14px;width:100%}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.5px}
+.brand-mark{
+  width:32px;height:32px;border-radius:10px;background:var(--grad);
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:16px;
+  box-shadow:var(--shadow-accent);flex:none;
+}
+.brand-text small{color:var(--muted);font-size:11px;font-weight:500;letter-spacing:0;display:block;margin-top:-2px}
+.nav-links{display:flex;gap:26px;margin-left:auto;font-size:14px;font-weight:500;color:var(--text-soft);align-items:center}
+.nav-links a{transition:color .15s;white-space:nowrap}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:10px;align-items:center;margin-left:8px}
+
+.icon-btn{
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  color:var(--text-soft);border:1px solid var(--border);background:var(--surface);
+  transition:.15s;flex:none;
+}
+.icon-btn:hover{color:var(--text);border-color:var(--muted)}
+.icon-btn svg{width:17px;height:17px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 20px;border-radius:11px;font-size:14px;font-weight:600;
+  transition:transform .15s, box-shadow .15s, background .15s, border-color .15s;
+  white-space:nowrap;border:1px solid transparent;
+}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:var(--shadow-accent)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 44px -12px rgba(124,92,252,.7)}
+.btn-primary:active{transform:scale(.98)}
+.btn-ghost{background:var(--surface);color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--muted);transform:translateY(-1px)}
+.btn-sm{padding:8px 14px;font-size:13px}
+.btn-lg{padding:14px 26px;font-size:15px}
+
+.hamburger{display:none}
+
+/* Mobile nav */
+@media(max-width:920px){
+  .nav-links{display:none}
+  .nav-actions .btn-primary span{display:none}
+  .nav-actions .btn-primary{padding:10px 12px}
+  .hamburger{display:grid;margin-left:auto}
+  .mobile-menu{
+    position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;
+    background:var(--bg);z-index:49;
+    display:none;flex-direction:column;padding:24px;gap:16px;
+    border-top:1px solid var(--border);
+  }
+  .mobile-menu.on{display:flex}
+  .mobile-menu a{
+    padding:14px;border-radius:12px;font-size:16px;font-weight:600;
+    background:var(--surface);border:1px solid var(--border);
+  }
+  .mobile-menu .btn{margin-top:8px}
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero{padding:80px 0 60px;position:relative;overflow:hidden}
+@media(max-width:768px){.hero{padding:56px 0 40px}}
+.hero-inner{max-width:820px;margin:0 auto;text-align:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px;border-radius:99px;
+  background:var(--surface);border:1px solid var(--border);
+  font-size:13px;font-weight:500;color:var(--text-soft);margin-bottom:26px;
+  box-shadow:var(--shadow-card);
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(0,229,160,.15);animation:pulse 2s infinite}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(0,229,160,.15)}
+  50%{box-shadow:0 0 0 6px rgba(0,229,160,.05)}
+}
+.hero h1{
+  font-size:clamp(34px,6.5vw,68px);line-height:1.05;letter-spacing:-.035em;
+  font-weight:800;margin-bottom:22px;
+}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{
+  font-size:clamp(16px,2.3vw,19px);color:var(--text-soft);
+  max-width:640px;margin:0 auto 36px;
+}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.hero-trust{
+  display:flex;gap:24px;justify-content:center;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);
+}
+.hero-trust span{display:inline-flex;align-items:center;gap:6px}
+.hero-trust svg{width:14px;height:14px;color:var(--accent)}
+
+/* Hero visual (device mockup) */
+.hero-visual{
+  max-width:900px;margin:60px auto 0;position:relative;
+}
+@media(max-width:768px){.hero-visual{margin-top:44px}}
+.device{
+  border-radius:20px;overflow:hidden;
+  background:var(--surface);border:1px solid var(--border);
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.03) inset;
+}
+.device-chrome{
+  display:flex;align-items:center;gap:6px;padding:12px 16px;
+  background:var(--surface-2);border-bottom:1px solid var(--border);
+}
+.device-chrome .dots{display:flex;gap:6px}
+.device-chrome .dots i{width:10px;height:10px;border-radius:50%;background:#ff5f57}
+.device-chrome .dots i:nth-child(2){background:#febc2e}
+.device-chrome .dots i:nth-child(3){background:#28c840}
+.device-chrome .url{
+  flex:1;margin-left:10px;padding:5px 12px;border-radius:8px;
+  background:var(--bg);border:1px solid var(--border);font-size:12px;color:var(--muted);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.device-body{
+  height:420px;background:#fbf5ec;overflow:hidden;
+  position:relative;
+}
+@media(max-width:768px){.device-body{height:300px}}
+.device-body iframe{width:100%;height:100%;border:0;display:block}
+
+/* =========================
+   SECTION SHELL
+   ========================= */
+section{padding:90px 0}
+@media(max-width:768px){section{padding:64px 0}}
+.section-tag{
+  display:inline-block;padding:5px 12px;border-radius:99px;
+  background:var(--grad-soft);border:1px solid rgba(124,92,252,.25);
+  color:var(--primary);font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;
+}
+.section-head{max-width:680px;margin:0 auto 52px;text-align:center}
+.section-head h2{
+  font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin-bottom:14px;
+  letter-spacing:-.03em;
+}
+.section-head p{color:var(--text-soft);font-size:16px;line-height:1.6}
+@media(max-width:768px){.section-head{margin-bottom:36px}}
+
+/* =========================
+   FEATURES
+   ========================= */
+.features-grid{
+  display:grid;gap:18px;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+}
+.feature-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:28px;
+  box-shadow:var(--shadow-card);
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  position:relative;overflow:hidden;
+}
+.feature-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(500px 200px at 100% 0%, rgba(124,92,252,.08), transparent 70%);
+  opacity:0;transition:opacity .3s;
+}
+.feature-card:hover{transform:translateY(-4px);border-color:rgba(124,92,252,.4);box-shadow:var(--shadow)}
+.feature-card:hover::before{opacity:1}
+.feature-icon{
+  width:48px;height:48px;border-radius:13px;
+  background:var(--grad-soft);border:1px solid rgba(124,92,252,.25);
+  display:grid;place-items:center;margin-bottom:18px;
+  color:var(--primary);
+}
+.feature-icon svg{width:22px;height:22px}
+.feature-card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.01em}
+.feature-card p{color:var(--text-soft);font-size:14.5px;line-height:1.55}
+
+/* =========================
+   PORTFOLIO
+   ========================= */
+.portfolio-grid{
+  display:grid;gap:22px;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+}
+.portfolio-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-card);cursor:pointer;
+  transition:transform .3s ease, border-color .25s, box-shadow .25s;
+  display:flex;flex-direction:column;
+}
+.portfolio-card:hover{transform:translateY(-5px);border-color:rgba(124,92,252,.5);box-shadow:var(--shadow)}
+.portfolio-mockup{
+  aspect-ratio:16/10;overflow:hidden;position:relative;
+  border-bottom:1px solid var(--border);
+}
+.mockup-inner{
+  width:100%;height:100%;padding:0;
+  background:var(--mock-bg, #fbf5ec);color:var(--mock-fg, #2b1d14);
+  display:flex;flex-direction:column;font-family:system-ui,sans-serif;
+  transition:transform .5s ease;
+}
+.portfolio-card:hover .mockup-inner{transform:scale(1.03)}
+.mock-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid rgba(0,0,0,.06);
+}
+.mock-logo{
+  width:56px;height:9px;border-radius:5px;background:var(--mock-accent, #2b1d14);
+}
+.mock-links{display:flex;gap:8px}
+.mock-links span{width:20px;height:5px;border-radius:3px;background:rgba(0,0,0,.2)}
+.mock-hero{
+  padding:22px 16px;text-align:center;background:var(--mock-hero, var(--mock-accent, #2b1d14));
+  color:var(--mock-hero-fg, #fbf5ec);
+}
+.mock-title{
+  height:11px;border-radius:4px;background:rgba(255,255,255,.8);
+  max-width:70%;margin:0 auto 6px;
+}
+.mock-subtitle{
+  height:6px;border-radius:3px;background:rgba(255,255,255,.5);
+  max-width:50%;margin:0 auto 10px;
+}
+.mock-btn{
+  display:inline-block;height:16px;width:64px;border-radius:5px;
+  background:var(--mock-btn, #fff);
+}
+.mock-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:8px;padding:14px;flex:1;align-content:start;
+}
+.mock-cards>div{
+  background:rgba(255,255,255,.7);border-radius:6px;
+  padding:10px 6px;text-align:center;
+  border:1px solid rgba(0,0,0,.05);
+}
+.mock-cards>div::before{
+  content:"";display:block;width:12px;height:12px;
+  border-radius:4px;background:var(--mock-accent, #2b1d14);
+  margin:0 auto 6px;opacity:.85;
+}
+.mock-cards>div::after{
+  content:"";display:block;height:4px;width:80%;margin:0 auto;
+  border-radius:2px;background:rgba(0,0,0,.15);
+}
+.portfolio-info{padding:20px 22px}
+.portfolio-tag{
+  display:inline-block;padding:3px 10px;border-radius:99px;
+  background:var(--grad-soft);border:1px solid rgba(124,92,252,.3);
+  color:var(--primary);font-size:11px;font-weight:700;
+  letter-spacing:.4px;text-transform:uppercase;margin-bottom:10px;
+}
+.portfolio-info h3{font-size:18px;margin-bottom:4px}
+.portfolio-info p{color:var(--text-soft);font-size:13.5px;margin-bottom:12px}
+.portfolio-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--primary);font-size:13px;font-weight:600;
+}
+.portfolio-link svg{width:14px;height:14px;transition:transform .2s}
+.portfolio-card:hover .portfolio-link svg{transform:translateX(3px)}
+
+/* =========================
+   PROCESS
+   ========================= */
+.process-grid{
+  display:grid;gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  counter-reset:step;
+}
+.step{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:28px;
+  position:relative;box-shadow:var(--shadow-card);
+}
+.step-num{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--grad);color:#fff;font-family:var(--font-display);
+  font-weight:800;font-size:19px;display:grid;place-items:center;
+  margin-bottom:18px;box-shadow:var(--shadow-accent);
+}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{color:var(--text-soft);font-size:14.5px;line-height:1.55}
+
+/* =========================
+   PRICING
+   ========================= */
+.pricing-grid{
+  display:grid;gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  align-items:stretch;
+}
+.price-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-xl);padding:32px 28px;
+  display:flex;flex-direction:column;
+  box-shadow:var(--shadow-card);
+  transition:transform .25s, box-shadow .25s;
+  position:relative;
+}
+.price-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.price-card.hot{
+  border:2px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--grad) border-box;
+  transform:scale(1.02);
+}
+@media(max-width:880px){.price-card.hot{transform:none}}
+.price-card.hot::before{
+  content:"En Popüler";position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--grad);color:#fff;font-size:11px;font-weight:700;
+  padding:5px 14px;border-radius:99px;letter-spacing:.6px;white-space:nowrap;
+}
+.price-name{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.price-amount{font-family:var(--font-display);font-size:42px;font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:4px}
+.price-amount small{font-size:15px;font-weight:500;color:var(--muted);letter-spacing:0}
+.price-desc{color:var(--text-soft);font-size:14px;margin-bottom:22px;min-height:22px}
+.price-features{list-style:none;flex:1;margin-bottom:24px}
+.price-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:8px 0;font-size:14px;color:var(--text-soft);line-height:1.4;
+}
+.price-features svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--accent)}
+.price-card .btn{width:100%}
+
+/* =========================
+   FAQ
+   ========================= */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+details.faq{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  transition:border-color .2s;
+}
+details.faq[open]{border-color:rgba(124,92,252,.4)}
+details.faq summary{
+  padding:20px 24px;cursor:pointer;list-style:none;
+  font-weight:600;font-size:15.5px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  user-select:none;
+}
+details.faq summary::-webkit-details-marker{display:none}
+.faq-toggle{
+  width:24px;height:24px;border-radius:6px;flex:none;
+  display:grid;place-items:center;color:var(--muted);
+  background:var(--surface-2);transition:.2s;
+}
+details.faq[open] .faq-toggle{transform:rotate(45deg);color:var(--primary)}
+.faq-toggle svg{width:14px;height:14px}
+details.faq .faq-body{
+  padding:0 24px 22px;color:var(--text-soft);font-size:14.5px;line-height:1.65;
+}
+
+/* =========================
+   CTA
+   ========================= */
+.cta-section{padding:80px 0}
+.cta-box{
+  position:relative;overflow:hidden;
+  background:var(--grad);color:#fff;
+  border-radius:var(--radius-xl);padding:64px 40px;
+  text-align:center;box-shadow:var(--shadow-accent);
+}
+.cta-box::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(600px 300px at 30% 0%, rgba(255,255,255,.18), transparent 60%),
+    radial-gradient(600px 300px at 70% 100%, rgba(0,0,0,.15), transparent 60%);
+}
+.cta-box>*{position:relative}
+.cta-box h2{font-size:clamp(28px,4.5vw,44px);margin-bottom:14px;letter-spacing:-.03em;color:#fff}
+.cta-box p{font-size:16.5px;opacity:.92;margin-bottom:28px;max-width:540px;margin-left:auto;margin-right:auto}
+.cta-box .btn-primary{background:#fff;color:#7c5cff;box-shadow:0 12px 40px -12px rgba(0,0,0,.3)}
+.cta-box .btn-primary:hover{box-shadow:0 16px 44px -12px rgba(0,0,0,.4)}
+.cta-box .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)}
+.cta-box .btn-ghost:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4)}
+@media(max-width:768px){.cta-box{padding:48px 24px}}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer{
+  padding:50px 0 40px;border-top:1px solid var(--border);
+  color:var(--text-soft);font-size:14px;
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-brand .brand-mark{width:28px;height:28px;border-radius:8px;font-size:14px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:13px}
+.footer-links a{color:var(--text-soft);transition:color .15s}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{width:100%;text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px;padding-top:26px;border-top:1px solid var(--border-soft)}
+
+/* =========================
+   MODAL (portfolio preview)
+   ========================= */
+.modal{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;overflow-y:auto;
+}
+.modal.on{display:flex}
+.modal-inner{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);width:100%;max-width:820px;
+  display:flex;flex-direction:column;overflow:hidden;
+  animation:modalIn .25s ease;box-shadow:var(--shadow);
+  max-height:92vh;
+}
+@keyframes modalIn{from{opacity:0;transform:scale(.96) translateY(10px)}}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px 22px;border-bottom:1px solid var(--border);
+}
+.modal-title-block{display:flex;flex-direction:column;gap:2px;min-width:0}
+.modal-tag{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
+  color:var(--primary);
+}
+.modal-title-block h3{font-size:17px;letter-spacing:-.01em}
+.modal-close{
+  width:34px;height:34px;border-radius:9px;flex:none;
+  display:grid;place-items:center;color:var(--text-soft);
+  background:var(--surface-2);border:1px solid var(--border);
+  transition:.15s;
+}
+.modal-close:hover{color:var(--text);border-color:var(--muted)}
+.modal-close svg{width:15px;height:15px}
+.modal-browser{
+  background:var(--bg);overflow:hidden;flex:1;min-height:0;
+  display:flex;flex-direction:column;
+}
+.modal-chrome{
+  display:flex;align-items:center;gap:6px;padding:10px 14px;
+  background:var(--surface-2);border-bottom:1px solid var(--border);
+}
+.modal-chrome .dots{display:flex;gap:6px}
+.modal-chrome .dots i{width:10px;height:10px;border-radius:50%;background:#ff5f57}
+.modal-chrome .dots i:nth-child(2){background:#febc2e}
+.modal-chrome .dots i:nth-child(3){background:#28c840}
+.modal-chrome .url{
+  flex:1;margin-left:10px;padding:5px 12px;border-radius:7px;
+  background:var(--bg);border:1px solid var(--border);font-size:12px;color:var(--muted);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+#previewFrame{
+  width:100%;height:520px;border:0;background:#fff;display:block;
+}
+@media(max-width:640px){#previewFrame{height:420px}}
+.modal-foot{
+  display:flex;gap:10px;padding:16px 22px;border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.modal-foot .btn{flex:1;min-width:180px}
+
+/* =========================
+   TOAST
+   ========================= */
+#toast{
+  position:fixed;bottom:26px;left:50%;transform:translate(-50%, 24px);
+  background:var(--surface-3);color:var(--text);
+  border:1px solid var(--border);
+  padding:12px 22px;border-radius:12px;
+  font-size:14px;font-weight:500;
+  opacity:0;pointer-events:none;transition:.3s ease;
+  z-index:200;max-width:90vw;text-align:center;
+  box-shadow:var(--shadow);
+  display:flex;align-items:center;gap:10px;
+}
+#toast.on{opacity:1;transform:translate(-50%, 0)}
+#toast.success{border-color:rgba(34,197,94,.4);color:#4ade80}
+#toast svg{width:16px;height:16px;flex:none}
+
+/* =========================
+   SCROLL REVEAL
+   ========================= */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* Utility */
+.hide-sm{}
+@media(max-width:640px){.hide-sm{display:none !important}}
+</style>
+</head>
+<body>
+
+<!-- =========================== NAVBAR =========================== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="brand" aria-label="LocalWeb.ios ana sayfa">
+      <div class="brand-mark">L</div>
+      <div class="brand-text">LocalWeb.ios</div>
+    </a>
+
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#portfolyo">Örnek Çalışmalar</a>
+      <a href="#paketler">Paketler</a>
+      <a href="#surec">Süreç</a>
+      <a href="#sss">SSS</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Tema değiştir" title="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="https://instagram.com/LocalWeb.ios" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span>Instagram'dan Yaz</span>
+      </a>
+      <button class="icon-btn hamburger" id="hamburger" aria-label="Menü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hizmetler" onclick="closeMobile()">Hizmetler</a>
+  <a href="#portfolyo" onclick="closeMobile()">Örnek Çalışmalar</a>
+  <a href="#paketler" onclick="closeMobile()">Paketler</a>
+  <a href="#surec" onclick="closeMobile()">Süreç</a>
+  <a href="#sss" onclick="closeMobile()">SSS</a>
+  <a href="https://instagram.com/LocalWeb.ios" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagram'dan Yaz</a>
+</div>
+
+<main>
+
+<!-- =========================== HERO =========================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>Yerel işletmelerin dijital büyüme ortağı</span>
+      </div>
+      <h1>
+        İşletmeni <span class="grad">Dijitale Taşı</span>,<br>
+        Müşterilerini Artır
+      </h1>
+      <p class="lead">
+        Kafe, restoran, kuaför, klinik, mağaza ve hizmet işletmeleri için
+        anahtar teslim, hızlı ve mobil uyumlu web siteleri tasarlıyoruz.
+        Instagram'dan yaz, siten birkaç gün içinde yayında.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://instagram.com/LocalWeb.ios" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          @LocalWeb.ios ile İletişime Geç
+        </a>
+        <button class="btn btn-ghost btn-lg" onclick="copyDM(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Hazır DM Mesajını Kopyala
+        </button>
+      </div>
+      <div class="hero-trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 7 günde teslim</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Mobil öncelikli</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> SEO dostu</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Teknik destek dahil</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="device">
+        <div class="device-chrome">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="url">🔒 kafekiyi.localweb.ios</div>
+        </div>
+        <div class="device-body">
+          <iframe id="heroPreview" title="Canlı örnek site önizlemesi" sandbox="allow-same-origin"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== HİZMETLER / AVANTAJLAR =========================== -->
+<section id="hizmetler">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Neden LocalWeb.ios?</div>
+      <h2>Şablon değil, işletmene özel tasarım</h2>
+      <p>Sadece güzel görünen değil, müşteri kazandıran siteler kuruyoruz. Hızlı, güvenilir, teknik olarak sağlam.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <h3>Mobil Kusursuzluk</h3>
+        <p>Müşterilerin %80'inden fazlası telefondan gelir. Sitelerimiz her ekranda — telefon, tablet, bilgisayar — kusursuz görünür.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Hız & SEO</h3>
+        <p>Google'da üst sıralarda çıkmak için hızlı yüklenen, temiz kodlu ve SEO dostu siteler kuruyoruz.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg>
+        </div>
+        <h3>Şık & Modern Tasarım</h3>
+        <p>Sektörüne uygun, güncel trendlerle tasarlanmış estetik arayüzler. Müşterinin güvenini ilk saniyede kazanırsın.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Hızlı Teslimat</h3>
+        <p>Uzun bekleme yok. Instagram'dan mesaj at, birkaç iş günü içinde siten yayında. Süreç boyunca yanındayız.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Teknik Destek</h3>
+        <p>Yayından sonra da yanındayız. Güncellemeler, sorular, yeni bölümler — tek DM ile çözülür.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 6v12"/></svg>
+        </div>
+        <h3>İşletme Dostu Fiyat</h3>
+        <p>Ajans faturası değil, yerel işletme bütçesine uygun. Ne ödediğini net bilirsin, sürpriz yok.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PORTFOLYO =========================== -->
+<section id="portfolyo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Örnek Çalışmalar</div>
+      <h2>Sektörüne göre tasarlanmış örnekler</h2>
+      <p>Kartlara tıklayarak mini önizlemeleri keşfet. Senin sektörün için de benzer bir tasarım hazırlayabiliriz.</p>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+  </div>
+</section>
+
+<!-- =========================== SÜREÇ =========================== -->
+<section id="surec">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Nasıl Çalışıyoruz?</div>
+      <h2>3 adımda siten yayında</h2>
+      <p>Karmaşık süreç yok. Instagram'dan mesaj atmak yeterli.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>DM At</h3>
+        <p>Instagram'dan bize ulaş, işletmeni kısaca anlat. Sektörüne uygun önerimizi hazırlıyoruz.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>Tasarım Hazır</h3>
+        <p>Sana özel tasarımı hazırlıyoruz. Beğenmediğin yerleri revize ediyoruz, tam istediğin gibi olana kadar.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Yayında</h3>
+        <p>Siten canlıya alınıyor. Artık müşterilerin seni Google'da ve linkte bulabilir. Kutlu olsun! 🎉</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PAKETLER =========================== -->
+<section id="paketler">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Hizmet Paketleri</div>
+      <h2>İşletmene uygun paket seç</h2>
+      <p>Net fiyatlar, sürpriz yok. Hangi paketi seçersen seç, teknik destek dahil.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-name">Başlangıç</div>
+        <div class="price-amount">₺2.499<small>'dan</small></div>
+        <div class="price-desc">Yeni başlayan işletmeler için ideal</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tek sayfa modern tasarım</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Mobil uyumlu & hızlı</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> İletişim formu & sosyal linkler</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 tur revizyon</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Alan adı + hosting (1 yıl)</li>
+        </ul>
+        <button class="btn btn-ghost" onclick="instagramWithMsg('Başlangıç paketi')">
+          Instagram'dan Yaz
+        </button>
+      </div>
+
+      <div class="price-card hot reveal">
+        <div class="price-name">Profesyonel</div>
+        <div class="price-amount">₺4.999<small>'dan</small></div>
+        <div class="price-desc">Ciddi müşteri çekmek isteyenler</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 4–6 sayfa özel tasarım</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Gelişmiş SEO ayarları</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Blog / galeri / menü bölümleri</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> WhatsApp & Instagram entegre</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 tur revizyon</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 ay öncelikli destek</li>
+        </ul>
+        <button class="btn btn-primary" onclick="instagramWithMsg('Profesyonel paket')">
+          Instagram'dan Yaz
+        </button>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="price-name">Özel Tasarım</div>
+        <div class="price-amount">Teklife<small> göre</small></div>
+        <div class="price-desc">Büyüyen işletmeler & markalar</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sınırsız sayfa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> E-ticaret / rezervasyon sistemi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Özel animasyonlar & marka kimliği</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Üçüncü parti entegrasyonlar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sınırsız revizyon</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aylık bakım & destek</li>
+        </ul>
+        <button class="btn btn-ghost" onclick="instagramWithMsg('Özel tasarım paketi')">
+          Teklif Al
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SSS =========================== -->
+<section id="sss">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Sıkça Sorulanlar</div>
+      <h2>Aklındaki sorular</h2>
+      <p>Merak ettiğin başka bir şey varsa DM at, hemen cevaplarız.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq reveal">
+        <summary>Teslim süresi ne kadar?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-body">Başlangıç paketi ortalama 3–5 iş günü, Profesyonel paket 7–10 iş günü içinde teslim edilir. Özel tasarım projeler için işin kapsamına göre süre belirleriz. Tasarım onayından sonra hızlıca yayına alırız.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Alan adı ve hosting dahil mi?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-body">Evet. İlk yıl alan adı (örn. isletmen.com) ve hosting ücretsizdir. Sonraki yıllar için cüzi bir yenileme bedeli olur, dilersen kendi hesabına devredebiliriz.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Mobil uyumlu mu olacak?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-body">Kesinlikle. Tüm sitelerimiz mobil öncelikli olarak tasarlanır. Telefon, tablet ve masaüstünde ayrı ayrı test edilir; her ekranda kusursuz görünür.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Sonradan güncelleme yapabilir miyim?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-body">Tabii. Küçük metin/fotoğraf güncellemeleri için bize Instagram'dan yazman yeterli. Profesyonel ve Özel paketlerde aylık bakım desteği de dahildir.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Ödeme nasıl yapılıyor?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-body">Anlaşma sağlandıktan sonra %50 ön ödeme, teslimat sonrası %50 bakiye. Havale/EFT veya kredi kartı ile ödeme kabul ediyoruz. Fatura kesilir.</div>
+      </details>
+      <details class="faq reveal">
+        <summary>Sektörüm listede yok, yine de yapabilir misiniz?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-body">Fark etmez. Emlakçıdan veteriner kliniğine, eğitim kurumundan yerel üreticiye kadar her sektöre özel tasarım yapıyoruz. İşletmeni anlat, sana özel çözüm sunalım.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CTA =========================== -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>İşletmeni bugün online yap</h2>
+      <p>Kredi kartı, uzun formlar, bekleme yok. Instagram'dan bir mesajla başlayalım.</p>
+      <div class="hero-ctas" style="margin-bottom:0">
+        <a href="https://instagram.com/LocalWeb.ios" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          @LocalWeb.ios ile İletişime Geç
+        </a>
+        <button class="btn btn-ghost btn-lg" onclick="copyUsername(this)">Kullanıcı adını kopyala</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark">L</div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:700;color:var(--text);font-size:15px">LocalWeb.ios</div>
+          <div style="font-size:12px;color:var(--muted)">Yerel işletmeler için web tasarımı</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#portfolyo">Örnek Çalışmalar</a>
+        <a href="#paketler">Paketler</a>
+        <a href="#sss">SSS</a>
+        <a href="https://instagram.com/LocalWeb.ios" target="_blank" rel="noopener noreferrer">@LocalWeb.ios</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © <span id="year"></span> LocalWeb.ios · Tüm hakları saklıdır · Made with ♥ in Türkiye
+    </div>
+  </div>
+</footer>
+
+<!-- =========================== PORTFOLYO MODAL =========================== -->
+<div class="modal" id="portfolioModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-inner">
+    <div class="modal-head">
+      <div class="modal-title-block">
+        <div class="modal-tag" id="modalTag">—</div>
+        <h3 id="modalTitle">—</h3>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Kapat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-browser">
+      <div class="modal-chrome">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="url" id="modalUrl">—</div>
+      </div>
+      <iframe id="previewFrame" title="Portfolyo önizlemesi" sandbox="allow-same-origin"></iframe>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-primary" id="modalCta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        Bu Tarz Bir Site İstiyorum
+      </button>
+      <button class="btn btn-ghost" onclick="closeModal()">Kapat</button>
+    </div>
+  </div>
+</div>
+
+<!-- =========================== TOAST =========================== -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* ============================================================
+   SABİTLER
+   ============================================================ */
+const IG_URL   = 'https://instagram.com/LocalWeb.ios';
+const IG_HANDLE= '@LocalWeb.ios';
+const DM_MSG   = 'Merhaba LocalWeb.ios, işletmem için web sitesi yaptırmak istiyorum.';
+
+/* ============================================================
+   MİNİ SİTE ŞABLONLARI (iframe srcdoc için tam HTML)
+   ============================================================ */
+const MINI_SITES = {
+
+  kafe: `<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kafe Kıyı</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#fbf5ec;color:#2b1d14;line-height:1.5}
+nav{padding:18px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ecdfcb}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px}
+nav ul{list-style:none;display:flex;gap:22px;font-size:14px;color:#6b5545}
+.hero{padding:56px 28px;text-align:center;background:linear-gradient(135deg,#2b1d14,#4a3020);color:#fbf5ec}
+.hero h1{font-size:clamp(28px,5vw,44px);letter-spacing:-1px;margin-bottom:12px;line-height:1.1}
+.hero p{opacity:.85;margin-bottom:24px;font-size:16px;max-width:520px;margin-left:auto;margin-right:auto}
+.hero a{display:inline-block;background:#d4a574;color:#2b1d14;padding:12px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}
+.menu{padding:50px 28px}
+.menu h2{text-align:center;font-size:32px;margin-bottom:8px;letter-spacing:-.8px}
+.menu>p{text-align:center;color:#8b6f5c;margin-bottom:36px;font-size:14px}
+.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.item{background:#fff;border-radius:14px;padding:24px;text-align:center;border:1px solid #f0e4d0}
+.item .em{font-size:40px;margin-bottom:12px}
+.item h3{font-size:17px;margin-bottom:4px}
+.item p{color:#8b6f5c;font-size:13px;margin-bottom:14px}
+.item b{color:#b8865a;font-size:20px}
+footer{padding:30px;text-align:center;background:#2b1d14;color:#fbf5ec;font-size:13px}
+</style></head><body>
+<nav><div class="logo">Kafe Kıyı</div><ul><li>Menü</li><li>Hakkımızda</li><li>İletişim</li></ul></nav>
+<div class="hero">
+  <h1>Sıcacık bir kahve, huzurlu bir mola</h1>
+  <p>Günlük taze çekilmiş çekirdeklerle demlenen kahveler, ev yapımı tatlılar.</p>
+  <a href="#">Menüyü Keşfet</a>
+</div>
+<div class="menu">
+  <h2>Öne Çıkanlar</h2>
+  <p>Her gün taze, her zaman lezzetli</p>
+  <div class="items">
+    <div class="item"><div class="em">☕</div><h3>Filtre Kahve</h3><p>Tek origin, günlük çekim</p><b>₺75</b></div>
+    <div class="item"><div class="em">🥐</div><h3>Croissant</h3><p>Tereyağlı, çıtır çıtır</p><b>₺65</b></div>
+    <div class="item"><div class="em">🍰</div><h3>Cheesecake</h3><p>Ev yapımı, frambuazlı</p><b>₺95</b></div>
+  </div>
+</div>
+<footer>© Kafe Kıyı · Kadıköy, İstanbul</footer>
+</body></html>`,
+
+  guzellik: `<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lumia Beauty</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#fdf5f8;color:#3a1c28;line-height:1.5}
+nav{padding:18px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f8e0e8}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px;color:#b91c5c}
+nav ul{list-style:none;display:flex;gap:22px;font-size:14px;color:#8a5a6b}
+.hero{padding:56px 28px;text-align:center;background:linear-gradient(135deg,#fce7f0,#fbcfe1);color:#3a1c28}
+.hero h1{font-size:clamp(28px,5vw,44px);letter-spacing:-1px;margin-bottom:12px;line-height:1.1;color:#7a1839}
+.hero p{opacity:.85;margin-bottom:24px;font-size:16px;max-width:520px;margin-left:auto;margin-right:auto;color:#6b3548}
+.hero a{display:inline-block;background:#b91c5c;color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}
+.services{padding:50px 28px}
+.services h2{text-align:center;font-size:32px;margin-bottom:8px;letter-spacing:-.8px;color:#7a1839}
+.services>p{text-align:center;color:#8a5a6b;margin-bottom:36px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.card{background:#fff;border-radius:14px;padding:28px 22px;text-align:center;border:1px solid #f8dbe5}
+.card .em{font-size:38px;margin-bottom:12px}
+.card h3{font-size:17px;margin-bottom:6px;color:#7a1839}
+.card p{color:#8a5a6b;font-size:13px;margin-bottom:14px}
+.card b{color:#b91c5c;font-size:16px}
+footer{padding:30px;text-align:center;background:#7a1839;color:#fdf5f8;font-size:13px}
+</style></head><body>
+<nav><div class="logo">Lumia Beauty</div><ul><li>Hizmetler</li><li>Hakkımızda</li><li>Randevu</li></ul></nav>
+<div class="hero">
+  <h1>Kendine ayırdığın zaman</h1>
+  <p>Uzman ekibimizle saç, cilt ve bakım hizmetleri. Randevunu şimdi oluştur.</p>
+  <a href="#">Randevu Al</a>
+</div>
+<div class="services">
+  <h2>Hizmetlerimiz</h2>
+  <p>Kişiye özel bakım protokolleri</p>
+  <div class="grid">
+    <div class="card"><div class="em">💇‍♀️</div><h3>Saç & Bakım</h3><p>Kesim, boya, bakım</p><b>₺450'den</b></div>
+    <div class="card"><div class="em">✨</div><h3>Cilt Bakımı</h3><p>Derin temizlik, nemlendirme</p><b>₺650'den</b></div>
+    <div class="card"><div class="em">💅</div><h3>Nail Art</h3><p>Manikür, kalıcı oje</p><b>₺350'den</b></div>
+  </div>
+</div>
+<footer>© Lumia Beauty · Nişantaşı, İstanbul</footer>
+</body></html>`,
+
+  butik: `<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atelier Butik</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#faf7f2;color:#2a201a;line-height:1.5}
+nav{padding:18px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ece1d2}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px;font-family:Georgia,serif;color:#7f1d1d}
+nav ul{list-style:none;display:flex;gap:22px;font-size:14px;color:#7a5c48}
+.hero{padding:60px 28px;text-align:center;background:#f0e6d6;color:#2a201a}
+.hero h1{font-size:clamp(28px,5vw,46px);letter-spacing:-1px;margin-bottom:12px;line-height:1.1;font-family:Georgia,serif;color:#7f1d1d;font-weight:700}
+.hero p{opacity:.85;margin-bottom:24px;font-size:16px;max-width:520px;margin-left:auto;margin-right:auto;color:#6b5444}
+.hero a{display:inline-block;background:#7f1d1d;color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px;letter-spacing:.3px}
+.products{padding:50px 28px}
+.products h2{text-align:center;font-size:30px;margin-bottom:8px;letter-spacing:-.5px;font-family:Georgia,serif;color:#7f1d1d}
+.products>p{text-align:center;color:#7a5c48;margin-bottom:36px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:900px;margin:0 auto}
+.prod{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #ece1d2}
+.prod-img{aspect-ratio:1;background:linear-gradient(135deg,#f4e8d4,#e8d5b7);display:grid;place-items:center;font-size:52px}
+.prod-info{padding:16px}
+.prod h3{font-size:15px;margin-bottom:4px;font-weight:600}
+.prod p{color:#8a6f5b;font-size:12px;margin-bottom:10px}
+.prod b{color:#7f1d1d;font-size:16px;font-weight:700}
+footer{padding:30px;text-align:center;background:#7f1d1d;color:#faf7f2;font-size:13px}
+</style></head><body>
+<nav><div class="logo">Atelier Butik</div><ul><li>Koleksiyon</li><li>Hakkımızda</li><li>İletişim</li></ul></nav>
+<div class="hero">
+  <h1>Zamansız zarafet, el yapımı dokunuşlar</h1>
+  <p>Küçük atölyemizde özenle üretilen sınırlı sayıda parçalar.</p>
+  <a href="#">Koleksiyonu Keşfet</a>
+</div>
+<div class="products">
+  <h2>Yeni Gelenler</h2>
+  <p>Her hafta tazelenen seçki</p>
+  <div class="grid">
+    <div class="prod"><div class="prod-img">👜</div><div class="prod-info"><h3>Deri Çanta</h3><p>El yapımı, doğal deri</p><b>₺2.890</b></div></div>
+    <div class="prod"><div class="prod-img">💎</div><div class="prod-info"><h3>Kolye</h3><p>925 gümüş, el işçiliği</p><b>₺890</b></div></div>
+    <div class="prod"><div class="prod-img">🧣</div><div class="prod-info"><h3>Kaşmir Şal</h3><p>%100 kaşmir, el dokuma</p><b>₺1.490</b></div></div>
+  </div>
+</div>
+<footer>© Atelier Butik · Moda, İstanbul</footer>
+</body></html>`,
+
+  hukuk: `<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demir & Partners</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f7fa;color:#1a2332;line-height:1.5}
+nav{padding:18px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dde3ec}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.3px;color:#1e3a8a;font-family:Georgia,serif}
+nav ul{list-style:none;display:flex;gap:22px;font-size:14px;color:#4b5c7a}
+.hero{padding:64px 28px;text-align:center;background:linear-gradient(135deg,#1e3a8a,#2a4ba8);color:#f5f7fa}
+.hero h1{font-size:clamp(28px,5vw,44px);letter-spacing:-1px;margin-bottom:12px;line-height:1.15;font-family:Georgia,serif}
+.hero p{opacity:.9;margin-bottom:24px;font-size:16px;max-width:520px;margin-left:auto;margin-right:auto}
+.hero a{display:inline-block;background:#fff;color:#1e3a8a;padding:12px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}
+.practice{padding:50px 28px}
+.practice h2{text-align:center;font-size:30px;margin-bottom:8px;letter-spacing:-.5px;color:#1e3a8a;font-family:Georgia,serif}
+.practice>p{text-align:center;color:#4b5c7a;margin-bottom:36px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.card{background:#fff;border-radius:14px;padding:28px;border:1px solid #dde3ec;border-top:4px solid #1e3a8a}
+.card .em{font-size:32px;margin-bottom:14px}
+.card h3{font-size:17px;margin-bottom:8px;color:#1e3a8a;font-family:Georgia,serif}
+.card p{color:#4b5c7a;font-size:13.5px}
+footer{padding:30px;text-align:center;background:#1a2332;color:#c5cfe0;font-size:13px}
+</style></head><body>
+<nav><div class="logo">Demir & Partners</div><ul><li>Uzmanlık</li><li>Ekibimiz</li><li>İletişim</li></ul></nav>
+<div class="hero">
+  <h1>Haklarınızı güvenle savunuyoruz</h1>
+  <p>20 yılı aşkın tecrübe, şeffaf süreç yönetimi ve sonuç odaklı yaklaşım.</p>
+  <a href="#">Randevu Al</a>
+</div>
+<div class="practice">
+  <h2>Uzmanlık Alanları</h2>
+  <p>Her alanda deneyimli avukat kadromuz</p>
+  <div class="grid">
+    <div class="card"><div class="em">⚖️</div><h3>Ticaret Hukuku</h3><p>Şirket kuruluşu, sözleşmeler, birleşme ve devir.</p></div>
+    <div class="card"><div class="em">🏛️</div><h3>İdare Hukuku</h3><p>İdari davalar, iptal ve tam yargı davaları.</p></div>
+    <div class="card"><div class="em">👨‍👩‍👧</div><h3>Aile Hukuku</h3><p>Boşanma, velayet, nafaka ve mal rejimi.</p></div>
+  </div>
+</div>
+<footer>© Demir & Partners · Levent, İstanbul</footer>
+</body></html>`
+};
+
+/* ============================================================
+   PORTFOLYO KART VERİSİ
+   ============================================================ */
+const PORTFOLIO = [
+  {
+    key:'kafe',
+    tag:'Kafe & Restoran',
+    title:'Kafe Kıyı',
+    desc:'Sıcacık bir kahve, huzurlu bir mola',
+    url:'kafekiyi.localweb.ios',
+    mockBg:'#fbf5ec', mockFg:'#2b1d14', mockAccent:'#2b1d14', mockHero:'#2b1d14', mockBtn:'#d4a574'
+  },
+  {
+    key:'guzellik',
+    tag:'Güzellik & Bakım',
+    title:'Lumia Beauty',
+    desc:'Kendine ayırdığın zaman',
+    url:'lumiabeauty.localweb.ios',
+    mockBg:'#fdf5f8', mockFg:'#3a1c28', mockAccent:'#b91c5c', mockHero:'#fbcfe1', mockHeroFg:'#7a1839', mockBtn:'#b91c5c'
+  },
+  {
+    key:'butik',
+    tag:'Butik Mağaza',
+    title:'Atelier Butik',
+    desc:'Zamansız zarafet, el yapımı dokunuşlar',
+    url:'atelierbutik.localweb.ios',
+    mockBg:'#faf7f2', mockFg:'#2a201a', mockAccent:'#7f1d1d', mockHero:'#f0e6d6', mockBtn:'#7f1d1d'
+  },
+  {
+    key:'hukuk',
+    tag:'Hukuk & Danışmanlık',
+    title:'Demir & Partners',
+    desc:'Haklarınızı güvenle savunuyoruz',
+    url:'demirpartners.localweb.ios',
+    mockBg:'#f5f7fa', mockFg:'#1a2332', mockAccent:'#1e3a8a', mockHero:'#1e3a8a', mockBtn:'#ffffff'
+  }
+];
+
+/* ============================================================
+   YARDIMCILAR
+   ============================================================ */
+const $ = id => document.getElementById(id);
+
+function copyToClipboard(text, cb){
+  const done = () => { if (typeof cb === 'function') cb(); };
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+      return;
+    }
+  } catch(e){}
+  fallbackCopy(text, done);
+}
+function fallbackCopy(text, cb){
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    ta.remove();
+    if (ok && typeof cb === 'function') cb();
+    else showToast('Kopyalanamadı, mesajı elle seçebilirsin.');
+  } catch(e){
+    showToast('Kopyalanamadı.');
+  }
+}
+
+let toastTimer = null;
+function showToast(msg, type = ''){
+  const t = $('toast');
+  if (!t) return;
+  const iconSvg = type === 'success'
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+    : '';
+  t.innerHTML = iconSvg + '<span>' + String(msg).slice(0,160) + '</span>';
+  t.className = type;
+  t.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('on'), 2800);
+}
+
+/* ============================================================
+   KOPYALAMA AKTİFLİKLERİ
+   ============================================================ */
+function copyDM(btn){
+  copyToClipboard(DM_MSG, () => {
+    showToast('Mesaj kopyalandı! Instagram\'a yönlendiriliyorsunuz…', 'success');
+    if (btn){
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kopyalandı!';
+      setTimeout(() => { btn.innerHTML = orig; }, 2200);
+    }
+    setTimeout(() => {
+      window.open(IG_URL, '_blank', 'noopener,noreferrer');
+    }, 600);
+  });
+}
+
+function copyUsername(btn){
+  copyToClipboard(IG_HANDLE, () => {
+    showToast('Kullanıcı adı kopyalandı: ' + IG_HANDLE, 'success');
+    if (btn){
+      const orig = btn.textContent;
+      btn.textContent = 'Kopyalandı ✓';
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    }
+  });
+}
+
+function instagramWithMsg(packageName){
+  const msg = DM_MSG + ' ' + packageName + ' hakkında bilgi alabilir miyim?';
+  copyToClipboard(msg, () => {
+    showToast('Mesaj kopyalandı! Instagram açılıyor…', 'success');
+    setTimeout(() => {
+      window.open(IG_URL, '_blank', 'noopener,noreferrer');
+    }, 500);
+  });
+}
+
+/* ============================================================
+   PORTFOLYO KART RENDER
+   ============================================================ */
+function renderPortfolio(){
+  const grid = $('portfolioGrid');
+  if (!grid) return;
+  grid.innerHTML = PORTFOLIO.map((p, i) => `
+    <div class="portfolio-card reveal" data-key="${p.key}" onclick="openModal('${p.key}')" role="button" tabindex="0" aria-label="${p.title} önizlemesini aç" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('${p.key}')}">
+      <div class="portfolio-mockup">
+        <div class="mockup-inner"
+             style="--mock-bg:${p.mockBg};--mock-fg:${p.mockFg};--mock-accent:${p.mockAccent};--mock-hero:${p.mockHero || p.mockAccent};--mock-hero-fg:${p.mockHeroFg || '#ffffff'};--mock-btn:${p.mockBtn || '#ffffff'}">
+          <div class="mock-nav">
+            <div class="mock-logo"></div>
+            <div class="mock-links"><span></span><span></span><span></span></div>
+          </div>
+          <div class="mock-hero">
+            <div class="mock-title"></div>
+            <div class="mock-subtitle"></div>
+            <div class="mock-btn"></div>
+          </div>
+          <div class="mock-cards"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-tag">${p.tag}</div>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <span class="portfolio-link">
+          Önizlemeyi Gör
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+let currentPortfolio = null;
+
+function openModal(key){
+  const p = PORTFOLIO.find(x => x.key === key);
+  const html = MINI_SITES[key];
+  if (!p || !html) return;
+
+  currentPortfolio = p;
+  $('modalTag').textContent = p.tag;
+  $('modalTitle').textContent = p.title;
+  $('modalUrl').textContent = p.url;
+  $('previewFrame').srcdoc = html;
+
+  const cta = $('modalCta');
+  cta.onclick = () => instagramWithMsg(p.title + ' gibi bir site');
+
+  $('portfolioModal').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  $('portfolioModal').classList.remove('on');
+  $('previewFrame').srcdoc = '';
+  currentPortfolio = null;
+  document.body.style.overflow = '';
+}
+
+/* ============================================================
+   TEMA
+   ============================================================ */
+const SUN_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>';
+const MOON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  const icon = $('themeIcon');
+  if (icon) icon.outerHTML = (theme === 'dark' ? SUN_ICON : MOON_ICON).replace('<svg ', '<svg id="themeIcon" ');
+  try { localStorage.setItem('lw-theme', theme); } catch(e){}
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', theme === 'dark' ? '#08080d' : '#fbfbfd');
+}
+
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+}
+
+(function initTheme(){
+  let saved = null;
+  try { saved = localStorage.getItem('lw-theme'); } catch(e){}
+  if (saved === 'dark' || saved === 'light'){ applyTheme(saved); return; }
+  applyTheme('dark');
+})();
+
+/* ============================================================
+   NAV & MOBILE MENU
+   ============================================================ */
+window.addEventListener('scroll', () => {
+  const nav = $('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 8);
+}, { passive:true });
+
+function closeMobile(){
+  const m = $('mobileMenu');
+  if (m) m.classList.remove('on');
+  document.body.style.overflow = '';
+}
+(function bindHamburger(){
+  const h = $('hamburger');
+  if (h) h.addEventListener('click', () => {
+    const m = $('mobileMenu');
+    if (!m) return;
+    const willOpen = !m.classList.contains('on');
+    m.classList.toggle('on', willOpen);
+    document.body.style.overflow = willOpen ? 'hidden' : '';
+  });
+})();
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+function initReveal(){
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)){
+    els.forEach(el => el.classList.add('on'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        e.target.classList.add('on');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
+}
+
+/* ============================================================
+   HERO IFRAME ÖNİZLEMESİ
+   ============================================================ */
+(function initHeroPreview(){
+  const ifr = $('heroPreview');
+  if (ifr) ifr.srcdoc = MINI_SITES.kafe;
+})();
+
+/* ============================================================
+   MODAL KAPATMA (ESC + arka plan)
+   ============================================================ */
+(function bindModalClose(){
+  const modal = $('portfolioModal');
+  if (!modal) return;
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape'){
+      if (modal.classList.contains('on')) closeModal();
+      const m = $('mobileMenu');
+      if (m && m.classList.contains('on')) closeMobile();
+    }
+  });
+})();
+
+/* ============================================================
+   FOOTER YIL
+   ============================================================ */
+(function setYear(){
+  const y = $('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+/* ============================================================
+   BAŞLAT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  renderPortfolio();
+  initReveal();
+});
+</script>
+</body>
+</html>
